@@ -73,6 +73,8 @@ You can run the following
 
     voms-proxy-init -voms cms -rfc
     
+    # fixes in run_susyDeDx_cfg.py
+    
     heppy Test run_susyDeDx_cfg.py --option region=sr --option run=sig
 
 This will produce the ntuples in the folder called Test.
