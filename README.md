@@ -81,3 +81,20 @@ This will produce the ntuples in the folder called Test.
 
 
 
+
+
+Add new variable
+====
+
+First define new variable in object:
+
+    https://github.com/cmg-xtracks/cmgtools-lite/blob/94X_dev/TTHAnalysis/python/analyzers/isoTrackDeDxAnalyzer.py
+    
+Then add to the ntuple creator:
+
+    https://github.com/cmg-xtracks/cmgtools-lite/blob/94X_dev/TTHAnalysis/python/analyzers/treeProducerXtracks.py
+    
+    
+
+
+
