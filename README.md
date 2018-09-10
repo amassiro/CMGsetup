@@ -96,5 +96,55 @@ Then add to the ntuple creator:
     
     
 
+Create pull request
+====
+
+After I change the files
+
+To check what is there around:
+    
+    cat .git/config
+    git push ====> git push origin <branch where I am now>
+ 
+Check which branch I am on
+
+    git status
+    
+    -->    On branch 94X_dev
+
+ 
+Commit:
+ 
+    git commit -m "comment here" file.py
+
+
+Push:
+
+    git push origin 94X_dev
+    
+Go on website:
+
+    https://github.com/amassiro/cmgtools-lite
+    
+    check my last commit is there
+    
+    click on "new pull request"
+    
+    In base fork (on the left): select to where I want to merge ---> cmg-xtracks/cmgtools-lite     94X_dev
+    Head fork: select my repository with the branch defined above (94X_dev)
+    
+    -> Create pull request
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
