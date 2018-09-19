@@ -77,6 +77,11 @@ You can run the following
     
     heppy Test run_susyDeDx_cfg.py --option region=sr --option run=sig
 
+    heppy Test run_susyDeDx_cfg.py --option region=cr1l --option run=mc
+
+    heppy Test run_susyDeDx_cfg.py --option region=cr1l --option run=data
+ 
+    
 This will produce the ntuples in the folder called Test.
 
 
@@ -145,6 +150,42 @@ Go on website:
     
     
     
+Using batch system
+====
+
+CERN batch using condor or LSF
+
+For condor, declaring 480 mins of job time (wall clock time)
     
+    heppy_batch.py -o /path/to/output/dir    cfg.py  -b run_condor_simple.sh -t 480 ./batchScript.sh -B
+         
+    heppy_batch.py  run_susyDeDx_cfg.py       -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MYBATCH/  --option region=cr1l --option run=data   \
+             -b run_condor_simple.sh  ./batchScript.sh -B
+             
+    
+to see running and pending jobs, use 
+
+    condor_q
+
+for LSF (using the default 8nh queue)
+    
+    heppy_batch.py -o /path/to/output/dir   cfg.py 
+
+( you should also set X509_USER_PROXY to some place on AFS and make sure to have a valid grid proxy)
+
+from the output directory, you can check for failed jobs with
+
+    cmgListChunksToResub  .
+
+you can use the -d option to skip from the list the jobs that appear to still be running"
+
+Also some more instructions here :
+
+    https://github.com/cheidegg/cmgtools-lite/pull/11
+
+
+
+
+
 
 
