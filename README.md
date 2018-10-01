@@ -171,7 +171,11 @@ for LSF (using the default 8nh queue)
     
     heppy_batch.py -o /path/to/output/dir   cfg.py 
 
-( you should also set X509_USER_PROXY to some place on AFS and make sure to have a valid grid proxy)
+you should also set X509_USER_PROXY to some place on AFS and make sure to have a valid grid proxy
+
+    export X509_USER_PROXY=$HOME/private/cms.proxy
+
+    voms-proxy-init -voms cms
 
 from the output directory, you can check for failed jobs with
 
