@@ -156,11 +156,11 @@ Using batch system
 CERN batch using condor or LSF
 
 For condor, declaring 480 mins of job time (wall clock time)
-    
-    heppy_batch.py -o /path/to/output/dir    cfg.py  -b run_condor_simple.sh -t 480 ./batchScript.sh -B
-         
+        
+    heppy_batch.py -o /path/to/dir run_susyDeDx_cfg.py   -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B --option region=cr1l --option run=data
+ 
     heppy_batch.py  run_susyDeDx_cfg.py       -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MYBATCH/  --option region=cr1l --option run=data   \
-             -b run_condor_simple.sh  ./batchScript.sh -B
+             -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
              
     
 to see running and pending jobs, use 
@@ -171,6 +171,10 @@ for LSF (using the default 8nh queue)
     
     heppy_batch.py -o /path/to/output/dir   cfg.py 
 
+    heppy_batch.py  run_susyDeDx_cfg.py       -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MYBATCH-lxbatch/  --option region=cr1l --option run=data 
+           
+        
+    
 you should also set X509_USER_PROXY to some place on AFS and make sure to have a valid grid proxy
 
     export X509_USER_PROXY=$HOME/private/cms.proxy
