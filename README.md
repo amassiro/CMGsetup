@@ -195,5 +195,34 @@ Also some more instructions here :
 
 
 
+    
+    
+    
+    
+Checkout a pull request
+====
+    
+    e.g. 
+    gpetruc:trackerTopology_and_AOD
+    
+    https://github.com/cmg-xtracks/cmgtools-lite/pull/18
+    
+    
+    
+Run:
 
+    
+    cd /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/test_geometry
+    
+    cmsrel CMSSW_9_4_6_patch1
+    cd CMSSW_9_4_6_patch1/src 
+    cmsenv
+    git cms-init
+
+    
+Near the bottom of the pull request, in the merge box, click command line instructions. Follow the sequence of steps to bring down the proposed pull request.
+
+    git clone https://github.com/gpetruc/cmgtools-lite.git    CMGTools
+    
+    git fetch origin  pull/18/head:cmg-xtracks:trackerTopology_and_AOD
 
