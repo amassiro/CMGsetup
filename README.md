@@ -81,6 +81,13 @@ You can run the following
 
     heppy Test run_susyDeDx_cfg.py --option region=cr1l --option run=data
  
+ 
+ 
+    heppy Test run_susyDeDx_cfg.py --option region=cr1l --option test=1A
+ 
+    heppy Test run_susyDeDx_cfg.py --option region=cr1l --option test=1S
+ 
+ 
     
 This will produce the ntuples in the folder called Test.
 
@@ -219,6 +226,10 @@ Run:
     cmsenv
     git cms-init
 
+    git remote add cmg-central https://github.com/CERN-PH-CMG/cmg-cmssw.git  -f  -t heppy_94X_dev
+    cp /afs/cern.ch/user/c/cmgtools/public/sparse-checkout_94X_heppy .git/info/sparse-checkout
+    git checkout -b heppy_94X_dev cmg-central/heppy_94X_dev
+
     
 Near the bottom of the pull request, in the merge box, click command line instructions. Follow the sequence of steps to bring down the proposed pull request.
 
@@ -226,3 +237,7 @@ Near the bottom of the pull request, in the merge box, click command line instru
     
     git fetch origin  pull/18/head:cmg-xtracks:trackerTopology_and_AOD
 
+
+    
+    
+    
