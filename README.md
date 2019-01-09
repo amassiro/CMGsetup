@@ -8,7 +8,7 @@ Where:
 
     /afs/cern.ch/user/a/amassiro/work/CMG/CMSSW_9_4_6_patch1/src
     /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/CMSSW_9_4_6_patch1/src
-    
+    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/CMSSW_9_4_6_patch1/src
     
 Disappearing tracks:
 
@@ -172,6 +172,8 @@ For condor, declaring 480 mins of job time (wall clock time)
     heppy_batch.py  run_susyDeDx_cfg.py       -o  /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/test_geometry/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MYBATCH/  --option region=cr1l --option run=data   \
              -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
+    heppy_batch.py  run_susyDeDx_cfg.py       -o  /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/test_geometry/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MYBATCHMC/  --option region=cr1l --option run=mc   \
+             -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
     
