@@ -48,6 +48,11 @@ You start by setting up the CMGTools area following the instructions on this twi
     git remote add origin  git@github.com:$YOUR_GITHUB_REPOSITORY/cmgtools-lite.git 
     git push -u origin 94X_dev
     
+If in the last instruction you get errors because of " the remote contains work that you do not have locally", try first "pull":
+
+    git pull origin 94X_dev
+    
+    
 Then get the latest and greatest code for our analysis from our git repo
 
     git pull https://github.com/cmg-xtracks/cmgtools-lite.git  94X_dev
@@ -243,6 +248,44 @@ Near the bottom of the pull request, in the merge box, click command line instru
     git clone https://github.com/gpetruc/cmgtools-lite.git    CMGTools
     
     git fetch origin  pull/18/head:cmg-xtracks:trackerTopology_and_AOD
+
+
+Checkout a pull request, change and prepare a new pull request
+====
+
+See comment:
+
+    Add more commits by pushing to the trackerTopology_and_AOD branch on gpetruc/cmgtools-lite.
+
+Run:
+
+    git clone https://github.com/gpetruc/cmgtools-lite.git    CMGTools
+    
+    git checkout   trackerTopology_and_AOD
+
+    git remote rm origin
+    
+    git remote add origin git@github.com:amassiro/cmgtools-lite.git
+    
+    git fetch origin
+    
+    git push -u origin trackerTopology_and_AOD
+    
+       ---> "-u" to track commits
+       
+Now I have here the branch needed: https://github.com/amassiro/cmgtools-lite
+
+E.g.: /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/python
+
+
+
+
+
+       
+    
+    
+
+
 
 
     
