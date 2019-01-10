@@ -91,6 +91,9 @@ You can run the following
     heppy Test run_susyDeDx_cfg.py --option region=cr1l --option test=1A
  
     heppy Test run_susyDeDx_cfg.py --option region=cr1l --option test=1S
+    heppy Test run_susyDeDx_cfg.py --option region=sr   --option test=1S
+    heppy Test run_susyDeDx_cfg.py --option region=sr   --option test=1A
+    heppy Test run_susyDeDx_cfg.py --option region=sr   --option test=1D
  
  
     
