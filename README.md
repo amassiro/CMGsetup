@@ -242,6 +242,10 @@ Run:
     cp /afs/cern.ch/user/c/cmgtools/public/sparse-checkout_94X_heppy .git/info/sparse-checkout
     git checkout -b heppy_94X_dev cmg-central/heppy_94X_dev
 
+This last part will download needed packages like:
+
+    EgammaAnalysis  PhysicsTools  RecoEgamma  RecoTauTag
+    
     
 Near the bottom of the pull request, in the merge box, click command line instructions. Follow the sequence of steps to bring down the proposed pull request.
 
