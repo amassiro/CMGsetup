@@ -100,8 +100,16 @@ You can run the following
 This will produce the ntuples in the folder called Test.
 
 
+Copy file from grid
+====
 
-
+Example:
+ 
+    xrdcp root://xrootd.unl.edu///store/data/Run2017D/MET/MINIAOD/PromptReco-v1/000/302/526/00000/A614054F-3E97-E711-B972-02163E019B58.root test.root    --> miniaodv1, not good
+    xrdcp root://xrootd.unl.edu///store/data/Run2017D/DoubleEG/MINIAOD/17Nov2017-v1/30000/ACC2A6E6-FCD6-E711-B0E2-0242AC1C0500.root      ---> miniaodv2, good but not working
+    
+    xrdcp root://xrootd.unl.edu///store/data/Run2017D/DoubleEG/MINIAOD/31Mar2018-v1/00000/C0914411-F636-E811-8796-44A84225D36F.root  --> good version
+ 
 
 Add new variable
 ====
