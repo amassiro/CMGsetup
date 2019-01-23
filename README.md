@@ -205,6 +205,22 @@ For condor, declaring 480 mins of job time (wall clock time)
     
     
     
+    heppy_batch.py  run_susyDeDx_cfg.py       -o  /eos/home-a/amassiro/CMG/Data/    --option region=cr1l --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    heppy_batch.py  run_susyDeDx_cfg.py       -o  /eos/home-a/amassiro/CMG/Data-CR1L/    --option region=cr1l --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    heppy_batch.py  run_susyDeDx_cfg.py       -o  /eos/home-a/amassiro/CMG/Data-SR/    --option region=sr --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    
+    
+    
+    
 to see running and pending jobs, use 
 
     condor_q
