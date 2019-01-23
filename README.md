@@ -204,17 +204,17 @@ For condor, declaring 480 mins of job time (wall clock time)
              -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+
     
-    heppy_batch.py  run_susyDeDx_cfg.py       -o  /eos/home-a/amassiro/CMG/Data/    --option region=cr1l --option run=data   \
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Data-SR/\
+    -r    /store/cmst3/user/amassiro/CMG/Data-SR/    --option region=sr --option run=data   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
-    
-    heppy_batch.py  run_susyDeDx_cfg.py       -o  /eos/home-a/amassiro/CMG/Data-CR1L/    --option region=cr1l --option run=data   \
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Data-CR1L/\
+    -r    /store/cmst3/user/amassiro/CMG/Data-CR1L/    --option region=cr1l --option run=data   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
-    
-    heppy_batch.py  run_susyDeDx_cfg.py       -o  /eos/home-a/amassiro/CMG/Data-SR/    --option region=sr --option run=data   \
-    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
     
