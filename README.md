@@ -226,11 +226,29 @@ For condor, declaring 480 mins of job time (wall clock time)
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/\
+    -r    /store/cmst3/user/amassiro/CMG/SIG-SR/    --option region=sr --option run=sig   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
     
     condor_q -af HoldReason
     
     
+    eoscms quota /eos/cms/store/cmst3/user/amassiro/CMG/
     
+    mv /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/    /eos/cms/store/user/amassiro/CMG/disappearing/
+    mv /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L/    /eos/cms/store/user/amassiro/CMG/disappearing/
+    
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/Data-CR1L/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/Data-CR1L/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/Data-CR1L/"$1"/tree*.root"}'
+
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/Data-SR/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/Data-SR/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/Data-SR/"$1"/tree*.root"}'
+
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L/"$1"/tree*.root"}'
+
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/"$1"/tree*.root"}'
+
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/SIG-SR/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/SIG-SR/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/SIG-SR/"$1"/tree*.root"}'
+
     
     
 to see running and pending jobs, use 
