@@ -231,6 +231,29 @@ For condor, declaring 480 mins of job time (wall clock time)
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-CR1L-NewGeometry/\
+    -r    /store/cmst3/user/amassiro/CMG/MC-CR1L-NewGeometry/    --option region=cr1l --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Data-CR1L-NewGeometry/\
+    -r    /store/cmst3/user/amassiro/CMG/Data-CR1L-NewGeometry/    --option region=cr1l --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    
+    
+    
+    
     condor_q -af HoldReason
     
     
