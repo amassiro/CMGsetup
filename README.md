@@ -274,6 +274,21 @@ For condor, declaring 480 mins of job time (wall clock time)
 
     
     
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/Data-CR1L-NewGeometry/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/Data-CR1L-NewGeometry/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/Data-CR1L-NewGeometry/"$1"/tree*.root"}'
+
+    ls --color=never /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L-NewGeometry/ | awk '{print "hadd /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L-NewGeometry/tree_"$1".root   /eos/cms/store/cmst3/user/amassiro/CMG/MC-CR1L-NewGeometry/"$1"/tree*.root"}'
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 to see running and pending jobs, use 
 
     condor_q
