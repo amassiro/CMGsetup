@@ -327,7 +327,7 @@ For condor, declaring 480 mins of job time (wall clock time)
     ls --color=never ../../cfg/MC-SR/ | grep -v ".cfg" | grep -v ".root" | grep DY                    | awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ "$1" 2  ../../cfg/MC-SR/"}'
     ls --color=never ../../cfg/MC-SR/ | grep -v ".cfg" | grep -v ".root" | grep Zvv                   | awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ "$1" 2  ../../cfg/MC-SR/"}'
     ls --color=never ../../cfg/MC-SR/ | grep -v ".cfg" | grep -v ".root" | grep WJets                 | awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ "$1" 1  ../../cfg/MC-SR/"}'
-    ls --color=never ../../cfg/MC-SR/ | grep -v ".cfg" | grep -v ".root" | grep -v WJets | grep -v DY | awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ "$1" 0  ../../cfg/MC-SR/"}'
+    ls --color=never ../../cfg/MC-SR/ | grep -v ".cfg" | grep -v ".root" | grep -v WJets | grep -v DY | grep -v Zvv| awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ "$1" 0  ../../cfg/MC-SR/"}'
     
     
     
