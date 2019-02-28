@@ -332,6 +332,12 @@ For condor, declaring 480 mins of job time (wall clock time)
     
     
     
+    ---> /eos/cms/store/group/phys_exotica/xtracks/
+    
+    ls --color=never /eos/cms/store/group/phys_exotica/xtracks/MC-SR/ | awk '{print "hadd /eos/cms/store/group/phys_exotica/xtracks/MC-SR/tree_"$1".root  /eos/cms/store/group/phys_exotica/xtracks/MC-SR/"$1"/tree*.root"}'
+    
+    
+    
     
 to see running and pending jobs, use 
 
