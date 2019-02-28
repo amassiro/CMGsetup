@@ -330,11 +330,15 @@ For condor, declaring 480 mins of job time (wall clock time)
     ls --color=never ../../cfg/MC-SR/ | grep -v ".cfg" | grep -v ".root" | grep -v WJets | grep -v DY | grep -v Zvv| awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/MC-SR/ "$1" 0  ../../cfg/MC-SR/"}'
     
     
+    ls --color=never ../../cfg/SIG-SR/ | grep -v ".cfg" | grep -v ".root"                             | awk '{print "python addSumWgt.py /eos/cms/store/cmst3/user/amassiro/CMG/SIG-SR/ "$1" 2  ../../cfg/SIG-SR/"}'
+    
+    
     
     
     ---> /eos/cms/store/group/phys_exotica/xtracks/
     
     ls --color=never /eos/cms/store/group/phys_exotica/xtracks/MC-SR/ | awk '{print "hadd /eos/cms/store/group/phys_exotica/xtracks/MC-SR/tree_"$1".root  /eos/cms/store/group/phys_exotica/xtracks/MC-SR/"$1"/tree*.root"}'
+    ls --color=never /eos/cms/store/group/phys_exotica/xtracks/SIG-SR/ | awk '{print "hadd /eos/cms/store/group/phys_exotica/xtracks/SIG-SR/tree_"$1".root  /eos/cms/store/group/phys_exotica/xtracks/SIG-SR/"$1"/tree*.root"}'
     
     
     
