@@ -245,6 +245,26 @@ For condor, declaring 480 mins of job time (wall clock time)
     
     
     
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR/\
+    -r    /store/group/phys_exotica/xtracks/5Mar2019/   --option region=sr --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    /eos/cms/store/group/phys_exotica/xtracks/5Mar2019/
+    
+    
+
+    mkdir /tmp/test/
+    cd /tmp/test/
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR/ .
+    cd MC-SR
+    
+    downloadTreesFromEOS.py -t treeProducerXtracks  .
+
+    
+    
+    
+    
     
     
     
