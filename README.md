@@ -261,6 +261,10 @@ For condor, declaring 480 mins of job time (wall clock time)
     
     downloadTreesFromEOS.py -t treeProducerXtracks  .
 
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c
+    
+    
+    
     
     
     
