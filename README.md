@@ -246,14 +246,18 @@ For condor, declaring 480 mins of job time (wall clock time)
     
     
     heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR/\
-    -r    /store/group/phys_exotica/xtracks/6Mar2019/   --option region=sr --option run=mc   \
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-SR/   --option region=sr --option run=mc   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
 
     heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/\
-    -r    /store/group/phys_exotica/xtracks/6Mar2019/   --option region=sr --option run=sig   \
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/SIG-SR/   --option region=sr --option run=sig   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
 
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/DATA-SR/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/DATA-SR/   --option region=sr --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
     /eos/cms/store/group/phys_exotica/xtracks/5Mar2019/
