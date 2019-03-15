@@ -277,6 +277,19 @@ For condor, declaring 480 mins of job time (wall clock time)
     downloadTreesFromEOS.py -t treeProducerXtracks  .   -c
     
     
+    cd ../
+    
+    haddChunks.py SIG-SR/
+    
+and now copy back on eos:
+
+
+    /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/
+    
+    ls SIG-SR/ | grep -v "Chunk" | awk '{print "cp -r SIG-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
+    
+    
+    
     
     
     
