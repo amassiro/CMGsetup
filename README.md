@@ -249,6 +249,13 @@ For condor, declaring 480 mins of job time (wall clock time)
     -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-SR/   --option region=sr --option run=mc   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-2/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-SR-2/   --option region=sr --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    
 
     heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/\
     -r    /store/group/phys_exotica/xtracks/6Mar2019/SIG-SR/   --option region=sr --option run=sig   \
@@ -287,9 +294,14 @@ and now copy back on eos:
     /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/
     
     ls SIG-SR/ | grep -v "Chunk" | awk '{print "cp -r SIG-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
+    ls MC-SR/  | grep -v "Chunk" | awk '{print "cp -r MC-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     
+
+but before ass wgtsum:
+
     
-    
+    ls --color=never  /tmp/test/SIG-SR/ | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/SIG-SR/ "$1" 0  "}'
+    ls --color=never  /tmp/test/MC-SR/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR/ "$1" 0  "}'
     
     
     
