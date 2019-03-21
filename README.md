@@ -276,6 +276,10 @@ For condor, declaring 480 mins of job time (wall clock time)
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR/ .
     cd MC-SR
 
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-2/ .
+    cd MC-SR-2
+
+    
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/ .
     cd SIG-SR
 
@@ -287,7 +291,13 @@ For condor, declaring 480 mins of job time (wall clock time)
     cd ../
     
     haddChunks.py SIG-SR/
+
+    haddChunks.py MC-SR/
+
+    haddChunks.py MC-SR-2/
+
     
+        
 and now copy back on eos:
 
 
