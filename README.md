@@ -240,6 +240,11 @@ For condor, declaring 480 mins of job time (wall clock time)
     
     
     
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-CR1L-Test2018MC/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-CR1L-Test2018MC/    --option region=cr1l --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
     
     
     
@@ -297,6 +302,18 @@ For condor, declaring 480 mins of job time (wall clock time)
     haddChunks.py MC-SR-2/
 
     
+Nice cleaning:
+
+    ls  MC-SR-2/ | grep TTSemi_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    ls  MC-SR-2/ | grep QCD_HT700to1000_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    ls  MC-SR-2/ | grep TBar_tch_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    ls  MC-SR-2/ | grep WJets_HT600to800_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    ls  MC-SR-2/ | grep ZvvJets_HT600to800_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    ls  MC-SR-2/ | grep WJets_HT100to200_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    ls  MC-SR-2/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
+    
+    
+    
         
 and now copy back on eos:
 
@@ -305,6 +322,7 @@ and now copy back on eos:
     
     ls SIG-SR/ | grep -v "Chunk" | awk '{print "cp -r SIG-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     ls MC-SR/  | grep -v "Chunk" | awk '{print "cp -r MC-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
+    ls MC-SR-2/  | grep -v "Chunk" | awk '{print "cp -r MC-SR-2/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     
 
 but before ass wgtsum:
@@ -312,7 +330,9 @@ but before ass wgtsum:
     
     ls --color=never  /tmp/test/SIG-SR/ | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/SIG-SR/ "$1" 0  "}'
     ls --color=never  /tmp/test/MC-SR/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR/ "$1" 0  "}'
-    
+
+    ls --color=never  /tmp/test/MC-SR-2/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR-2/ "$1" 0  "}'
+
     
     
     
