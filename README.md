@@ -260,6 +260,9 @@ For condor, declaring 480 mins of job time (wall clock time)
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-3/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-SR-3/   --option region=sr --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
 
     heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/\
