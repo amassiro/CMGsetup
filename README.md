@@ -287,6 +287,9 @@ For condor, declaring 480 mins of job time (wall clock time)
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-2/ .
     cd MC-SR-2
 
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-3/ .
+    cd MC-SR-3
+
     
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/ .
     cd SIG-SR
@@ -304,6 +307,8 @@ For condor, declaring 480 mins of job time (wall clock time)
 
     haddChunks.py MC-SR-2/
 
+    haddChunks.py MC-SR-3/
+
     
 Nice cleaning:
 
@@ -315,6 +320,8 @@ Nice cleaning:
     ls  MC-SR-2/ | grep WJets_HT100to200_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
     ls  MC-SR-2/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
     
+    ls  MC-SR-3/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-3/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh
+    ls --color=none  MC-SR-3/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-3/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh > doit.sh
     
     
         
@@ -326,15 +333,17 @@ and now copy back on eos:
     ls SIG-SR/ | grep -v "Chunk" | awk '{print "cp -r SIG-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     ls MC-SR/  | grep -v "Chunk" | awk '{print "cp -r MC-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     ls MC-SR-2/  | grep -v "Chunk" | awk '{print "cp -r MC-SR-2/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
+    ls MC-SR-3/  | grep -v "Chunk" | awk '{print "cp -r MC-SR-3/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     
 
-but before ass wgtsum:
+but before add wgtsum:
 
     
     ls --color=never  /tmp/test/SIG-SR/ | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/SIG-SR/ "$1" 0  "}'
     ls --color=never  /tmp/test/MC-SR/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR/ "$1" 0  "}'
 
     ls --color=never  /tmp/test/MC-SR-2/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR-2/ "$1" 0  "}'
+    ls --color=never  /tmp/test/MC-SR-3/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR-3/ "$1" 0  "}'
 
     
     
