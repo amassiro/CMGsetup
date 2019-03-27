@@ -322,6 +322,9 @@ Nice cleaning:
     
     ls  MC-SR-3/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-3/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh
     ls --color=none  MC-SR-3/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-3/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh > doit.sh
+
+    ls --color=none  MC-SR-3/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-3/"$1"/treeProducerXtracks/tree.root\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh > doit.sh
+
     
     
         
