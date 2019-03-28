@@ -264,6 +264,11 @@ For condor, declaring 480 mins of job time (wall clock time)
     -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-SR-3/   --option region=sr --option run=mc   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-4/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/MC-SR-4/   --option region=sr --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
 
     heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/\
     -r    /store/group/phys_exotica/xtracks/6Mar2019/SIG-SR/   --option region=sr --option run=sig   \
@@ -290,6 +295,9 @@ For condor, declaring 480 mins of job time (wall clock time)
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-3/ .
     cd MC-SR-3
 
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-SR-4/ .
+    cd MC-SR-4
+
     
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR/ .
     cd SIG-SR
@@ -308,6 +316,8 @@ For condor, declaring 480 mins of job time (wall clock time)
     haddChunks.py MC-SR-2/
 
     haddChunks.py MC-SR-3/
+
+    haddChunks.py MC-SR-4/
 
     
 Nice cleaning:
