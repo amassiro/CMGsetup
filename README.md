@@ -173,12 +173,7 @@ Go on website:
     
     
     
-    
-    
-    
-    
-    
-    
+     
     
     
 Using batch system
@@ -320,6 +315,7 @@ For condor, declaring 480 mins of job time (wall clock time)
     haddChunks.py MC-SR-4/
 
     
+    
 Nice cleaning:
 
     ls  MC-SR-2/ | grep TTSemi_Chunk | awk {'print "if [ ! -f \"MC-SR-2/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-2/"$1" .\"; fi"'}  | /bin/sh
@@ -336,6 +332,10 @@ Nice cleaning:
     ls --color=none  MC-SR-3/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-3/"$1"/treeProducerXtracks/tree.root\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh > doit.sh
 
     
+    ls --color=none  MC-SR-4/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-4/"$1"/treeProducerXtracks/tree.root\" ]; then  echo \"mv MC-SR-4/"$1" .\"; fi"'}  | /bin/sh > doit.sh
+    ls --color=none  MC-SR-4/ | grep Chunk | awk {'print "if [ ! -f \"MC-SR-4/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv MC-SR-3/"$1" .\"; fi"'}  | /bin/sh > doit.sh
+
+    
     
         
 and now copy back on eos:
@@ -347,6 +347,7 @@ and now copy back on eos:
     ls MC-SR/  | grep -v "Chunk" | awk '{print "cp -r MC-SR/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     ls MC-SR-2/  | grep -v "Chunk" | awk '{print "cp -r MC-SR-2/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     ls MC-SR-3/  | grep -v "Chunk" | awk '{print "cp -r MC-SR-3/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
+    ls MC-SR-4/  | grep -v "Chunk" | awk '{print "cp -r MC-SR-4/"$1" /eos/cms/store/group/phys_exotica/xtracks/6Mar2019-Hadded/"}'
     
 
 but before add wgtsum:
@@ -358,6 +359,8 @@ but before add wgtsum:
     ls --color=never  /tmp/test/MC-SR-2/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR-2/ "$1" 0  "}'
     ls --color=never  /tmp/test/MC-SR-3/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR-3/ "$1" 0  "}'
 
+    ls --color=never  /tmp/test/MC-SR-4/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-SR-4/ "$1" 0  "}'
+    
     
     
     
@@ -565,6 +568,16 @@ E.g.: /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/test_geometry_Giovanni
     
     
 
+
+    
+New branch
+====
+
+    git checkout -b  AM_new_branch_for_2017
+    
+    git push -u origin AM_new_branch_for_2017
+    
+    
 
 
 
