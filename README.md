@@ -579,7 +579,24 @@ New branch
     
     
 
+2018 data and MC
+====
 
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Data-CR1L-2018/\
+    -r  /store/group/phys_exotica/xtracks/1Apr2019/DATA-2018-CR1l/     --option region=cr1l    --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-CR1L-2018/\
+    -r  /store/group/phys_exotica/xtracks/1Apr2019/MC-2018-CR1l/     --option region=cr1l    --option run=mc   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    
+    
+    
+    
+    
 
     
     
