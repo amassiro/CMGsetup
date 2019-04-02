@@ -592,7 +592,19 @@ New branch
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+    mkdir /tmp/test/
+    cd /tmp/test/
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-CR1L-2018/ .
+    cd MC-CR1L-2018
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c
     
+    
+    cd ../
+    
+    haddChunks.py MC-CR1L-2018/
+
+
     
     
     
