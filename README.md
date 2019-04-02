@@ -592,6 +592,8 @@ New branch
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+    
+    
     mkdir /tmp/test/
     cd /tmp/test/
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/MC-CR1L-2018/ .
@@ -599,11 +601,34 @@ New branch
 
     downloadTreesFromEOS.py -t treeProducerXtracks  .   -c
     
-    
     cd ../
-    
     haddChunks.py MC-CR1L-2018/
 
+    
+    cd /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/macros/xtracks/
+    
+    ls --color=never  /tmp/test/MC-CR1L-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-CR1L-2018/ "$1" 0  "}'
+    
+    
+    ls MC-CR1L-2018/  | grep -v "Chunk" | awk '{print "cp -r MC-CR1L-2018/"$1" /eos/cms/store/group/phys_exotica/xtracks/1Apr2019-Hadded-2018/"}'
+
+    
+    
+    
+    
+    
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Data-CR1L-2018/ .
+    cd Data-CR1L-2018
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c
+    
+    cd ../
+    haddChunks.py Data-CR1L-2018/
+    
+    ls --color=none   Data-CR1L-2018/   | grep Chunk | awk {'print "if [ ! -f \"Data-CR1L-2018/"$1"/treeProducerXtracks/tree.root\" ]; then  echo \"mv  Data-CR1L-2018/"$1" .\"; fi"'}  | /bin/sh > doit.sh
+    
+    
+    ls Data-CR1L-2018/  | grep -v "Chunk" | awk '{print "cp -r Data-CR1L-2018/"$1" /eos/cms/store/group/phys_exotica/xtracks/1Apr2019-Hadded-2018/"}'
 
     
     
