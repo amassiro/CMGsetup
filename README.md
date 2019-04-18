@@ -278,6 +278,15 @@ For condor, declaring 480 mins of job time (wall clock time)
     /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/
     
     
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/DATA-SR-2017/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/DATA-SR-2017/   --option region=sr --option run=data   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    ls --color=never /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/DATA-SR-2017/ | awk '{print "hadd /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/DATA-SR-2017/tree_"$1".root   /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/DATA-SR-2017/"$1"/tree*.root"}'
+
+    
+    
+    
 
     mkdir /tmp/test/
     cd /tmp/test/
