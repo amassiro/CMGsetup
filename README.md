@@ -591,6 +591,10 @@ New branch
 2018 data and MC
 ====
 
+    heppy Test run_susyDeDx_2018_cfg.py --option region=cr1l   --option test=1D
+    heppy Test run_susyDeDx_2018_cfg.py --option region=cr1l   --option test=1E
+ 
+ 
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Data-CR1L-2018/\
     -r  /store/group/phys_exotica/xtracks/1Apr2019/DATA-2018-CR1l/     --option region=cr1l    --option run=data   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
@@ -600,7 +604,8 @@ New branch
     -r  /store/group/phys_exotica/xtracks/1Apr2019/MC-2018-CR1l/     --option region=cr1l    --option run=mc   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
-    
+    hadd      /eos/cms/store/group/phys_exotica/xtracks/1Apr2019/MC-2018-CR1l/tree_DYJetsM50_HT100to200.root   /eos/cms/store/group/phys_exotica/xtracks/1Apr2019/MC-2018-CR1l/DYJetsM50_HT100to200/tree*.root
+
     
     
     mkdir /tmp/test/
