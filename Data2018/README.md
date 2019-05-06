@@ -66,7 +66,38 @@ Then get the latest and greatest code for our analysis from our git repo
     git pull https://github.com/cmg-xtracks/cmgtools-lite.git  104X_dev
 
     
+ 
+ 
+Port 10_4_X into xtrack:
+
+    where: /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/ForMigration/CMSSW_10_4_0/src/
     
+ 
+    git clone git@github.com:cmg-xtracks/cmgtools-lite.git
+    
+    cd cmgtools-lite/
+    
+    git remote add central-cmg-amassiro git@github.com:CERN-PH-CMG/cmgtools-lite.git
+    
+    git fetch central-cmg-amassiro
+    
+    
+    
+    git checkout central-cmg-amassiro/104X_dev
+    
+    git branch 104X_dev
+    
+    
+    git push -u origin 104X_dev
+    
+    
+
+    NB:
+    pull = fetch + merge on current branch
+    
+    
+ 
+ 
 New branch
 ====
 
