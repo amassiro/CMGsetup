@@ -17,7 +17,8 @@ Instructions:
 Where:
 
     /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_2_5/src
-    /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src
+    
+    /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src    --> ok
     
 Install:
 
@@ -63,12 +64,13 @@ Compile
 Then get the latest and greatest code for our analysis from our git repo
 
     git pull https://github.com/cmg-xtracks/cmgtools-lite.git  104X_dev
-    git pull https://github.com/cmg-xtracks/cmgtools-lite.git  104X_dev
 
     
  
  
-Port 10_4_X into xtrack:
+ 
+Port 10_4_X into xtrack (to be done only if new branch to commit): 
+====
 
     where: /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/ForMigration/CMSSW_10_4_0/src/
     
@@ -85,7 +87,7 @@ Port 10_4_X into xtrack:
     
     git checkout central-cmg-amassiro/104X_dev
     
-    git branch 104X_dev
+    git checkout -b 104X_dev
     
     
     git push -u origin 104X_dev
@@ -102,14 +104,25 @@ New branch
 ====
 
 
-    git checkout -b  AM_new_branch_for_2017
+    git checkout -b  AM_new_branch_for_2018
     
-    git push -u origin AM_new_branch_for_2017
+    git push -u origin AM_new_branch_for_2018
      
 
 2018 data and MC
 ====
 
     heppy Test run_susyDeDx_2018_cfg.py --option region=cr1l   --option test=1D
+    
+    
+    
+    voms-proxy-init -voms cms
+    xrdcp root://xrootd.unl.edu///store/mc/RunIIAutumn18MiniAOD/DYJetsToLL_M-50_HT-800to1200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15-v2/90000/FB3B40F9-0C73-C144-BB08-8E2DFB7AD448.root  /tmp/amassiro/FB3B40F9-0C73-C144-BB08-8E2DFB7AD448.root
+    
     heppy Test run_susyDeDx_2018_cfg.py --option region=cr1l   --option test=1E
+    
+    
+    
+    
+    
  
