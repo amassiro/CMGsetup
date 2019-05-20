@@ -133,8 +133,41 @@ Control region:
     
     ls /eos/cms/store/group/phys_exotica/xtracks/1May2019/DATA-CR-2018/
     
+    mkdir /tmp/test/
+    cd /tmp/test/
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/DATA-CR-2018/ .
+    cd DATA-CR-2018/
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c    -j 4
+    
+    cd ../
+    
+    haddChunks.py DATA-CR-2018/
+
+
+NB:
+
+    downloadTreesFromEOS.py
+ 
+           -h, --help           show this help message and exit
+           -t TREEPRODUCERNAME  Name of the tree producer module
+           -T TREENAME          Name of the tree file
+           -c, --continue       Continue downloading if a chunk failed and print a
+                                summary at the end
+           -j NJOBS             Number of parallel downloading tasks
+
     
     
     
-    
+Summary of failed download attempts (7 in total):
+Chunk ./amassiro.cc does not contain url file ./amassiro.cc/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_SingleMuon_Run2018B_17Sep2018.cfg does not contain url file ./jobs_desc_SingleMuon_Run2018B_17Sep2018.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_SingleMuon_Run2018A_17Sep2018.cfg does not contain url file ./jobs_desc_SingleMuon_Run2018A_17Sep2018.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_SingleMuon_Run2018C_17Sep2018.cfg does not contain url file ./jobs_desc_SingleMuon_Run2018C_17Sep2018.cfg/treeProducerXtracks/tree.root.url
+Chunk ./SingleMuon_Run2018B_17Sep2018_Chunk130 does not contain url file ./SingleMuon_Run2018B_17Sep2018_Chunk130/treeProducerXtracks/tree.root.url
+Chunk ./SingleMuon_Run2018D_PromptReco_v2_Chunk193 does not contain url file ./SingleMuon_Run2018D_PromptReco_v2_Chunk193/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_SingleMuon_Run2018D_PromptReco_v2.cfg does not contain url file ./jobs_desc_SingleMuon_Run2018D_PromptReco_v2.cfg/treeProducerXtracks/tree.root.url
+
+
+
  
