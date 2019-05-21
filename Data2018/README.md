@@ -150,6 +150,35 @@ Control region:
     
     
     
+    
+    
+    
+    
+    
+    
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/MC-CR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/1May2019/MC-CR-2018/   --option region=cr1l --option run=mc   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+
+                                                 
+    ls /eos/cms/store/group/phys_exotica/xtracks/1May2019/MC-CR-2018/
+                                                 
+    mkdir /tmp/test/
+    cd /tmp/test/
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/MC-CR-2018/ .
+    cd MC-CR-2018/
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c    -j 4
+    
+    cd ../
+    
+    haddChunks.py MC-CR-2018/
+
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/1May2019/MC-CR-2018-Hadded/
+    
+    
+    
+    
 NB:
 
     downloadTreesFromEOS.py
