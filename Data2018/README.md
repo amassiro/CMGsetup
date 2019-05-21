@@ -176,7 +176,8 @@ Control region:
 
     mkdir /eos/cms/store/group/phys_exotica/xtracks/1May2019/MC-CR-2018-Hadded/
     
-    
+    cd  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/macros/xtracks/
+    ls --color=never  /tmp/test/MC-CR-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-CR-2018/ "$1" 1  "}'
     
     
 NB:
@@ -195,6 +196,8 @@ Fixes:
     
     ls  --color=none DATA-CR-2018/ | awk {'print "if [ ! -f \"DATA-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv DATA-CR-2018/"$1" .\"; fi"'}  | /bin/sh
     
+    ls  --color=none MC-CR-2018/ | awk {'print "if [ ! -f \"MC-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv MC-CR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
     
     
     
@@ -210,4 +213,15 @@ Chunk ./jobs_desc_SingleMuon_Run2018D_PromptReco_v2.cfg does not contain url fil
 
 
 
- 
+Summary of failed download attempts (8 in total):
+Chunk ./jobs_desc_DYJetsToLL_M50_HT400to600.cfg does not contain url file ./jobs_desc_DYJetsToLL_M50_HT400to600.cfg/treeProducerXtracks/tree.root.url
+Chunk ./amassiro.cc does not contain url file ./amassiro.cc/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_DYJetsToLL_M50_HT200to400.cfg does not contain url file ./jobs_desc_DYJetsToLL_M50_HT200to400.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_DYJetsToLL_M50_HT100to200.cfg does not contain url file ./jobs_desc_DYJetsToLL_M50_HT100to200.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_DYJetsToLL_M50_HT800to1200.cfg does not contain url file ./jobs_desc_DYJetsToLL_M50_HT800to1200.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_DYJetsToLL_M50_HT400to600_ext2.cfg does not contain url file ./jobs_desc_DYJetsToLL_M50_HT400to600_ext2.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_DYJetsToLL_M50_HT600to800.cfg does not contain url file ./jobs_desc_DYJetsToLL_M50_HT600to800.cfg/treeProducerXtracks/tree.root.url
+Chunk ./DYJetsToLL_M50_HT100to200_Chunk36 does not contain url file ./DYJetsToLL_M50_HT100to200_Chunk36/treeProducerXtracks/tree.root.url
+
+
+
