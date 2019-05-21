@@ -145,6 +145,11 @@ Control region:
     haddChunks.py DATA-CR-2018/
 
 
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/1May2019/DATA-CR-2018-Hadded/
+    
+    
+    
+    
 NB:
 
     downloadTreesFromEOS.py
@@ -156,6 +161,12 @@ NB:
                                 summary at the end
            -j NJOBS             Number of parallel downloading tasks
 
+    
+Fixes:
+    
+    ls  --color=none DATA-CR-2018/ | awk {'print "if [ ! -f \"DATA-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv DATA-CR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    
     
     
     
