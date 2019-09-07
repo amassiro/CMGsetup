@@ -148,11 +148,7 @@ Control region:
     mkdir /eos/cms/store/group/phys_exotica/xtracks/1May2019/DATA-CR-2018-Hadded/
     
     
-    
-    
-    
-    
-    
+     
     
     
     
@@ -180,7 +176,22 @@ Control region:
     ls --color=never  /tmp/test/MC-CR-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/MC-CR-2018/ "$1" 1  "}'
     
 
+After calibration performed:
+
     
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/DATA-CR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/DATA-CR-2018/   --option region=cr1l --option run=data   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+
+
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/MC-CR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/MC-CR-2018/   --option region=cr1l --option run=mc   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+
+                                                 
+                                                 
+                                                 
+
 NB:
 
     downloadTreesFromEOS.py
