@@ -179,16 +179,24 @@ Control region:
 After calibration performed:
 
     
-    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/DATA-CR-2018/\
-                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/DATA-CR-2018/   --option region=cr1l --option run=data   \
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-DATA-CR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018/   --option region=cr1l --option run=data   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
 
 
-    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/MC-CR-2018/\
-                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/MC-CR-2018/   --option region=cr1l --option run=mc   \
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-CR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-CR-2018/   --option region=cr1l --option run=mc   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
 
                                                  
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-DATA-SR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/   --option region=sr --option run=data   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+
+
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-SR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018/   --option region=sr --option run=mc   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                                  
                                                  
 
