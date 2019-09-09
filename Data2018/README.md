@@ -217,7 +217,10 @@ After calibration performed:
 
     mkdir /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018-Hadded/
                                                  
-                                                 
+      
+    ls Calibrated-MC-SR-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-SR-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Hadded/"}'
+    ls Calibrated-MC-CR-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-CR-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-CR-2018-Hadded/"}'
+
                                                  
                                                  
 NB:
@@ -247,6 +250,8 @@ Fixes:
     
     
     ls  --color=none Calibrated-MC-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    ls  --color=none Calibrated-MC-CR-2018/ | awk {'print "if [ ! -f \"Calibrated-MC-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-MC-CR-2018/"$1" .\"; fi"'}  | /bin/sh
     
     
     
