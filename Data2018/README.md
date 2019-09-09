@@ -19,6 +19,8 @@ Where:
     /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_2_5/src
     
     /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src    --> ok
+    /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg
+    
     
 Install:
 
@@ -200,6 +202,24 @@ After calibration performed:
                                                  
                                                  
 
+    mkdir /tmp/test/
+    cd /tmp/test/
+    
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-DATA-CR-2018/ .
+    cd Calibrated-DATA-CR-2018/
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c    -j 4
+    
+    cd ../
+    
+    haddChunks.py DATA-CR-2018/
+
+
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/1May2019/DATA-CR-2018-Hadded/
+                                                 
+                                                 
+                                                 
+                                                 
 NB:
 
     downloadTreesFromEOS.py
@@ -217,6 +237,13 @@ Fixes:
     ls  --color=none DATA-CR-2018/ | awk {'print "if [ ! -f \"DATA-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv DATA-CR-2018/"$1" .\"; fi"'}  | /bin/sh
     
     ls  --color=none MC-CR-2018/ | awk {'print "if [ ! -f \"MC-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv MC-CR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    
+    ls  --color=none Calibrated-DATA-CR-2018/ | awk {'print "if [ ! -f \"Calibrated-DATA-CR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-DATA-CR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    ls  --color=none Calibrated-DATA-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-DATA-SR-2018/"$1"/isoTrackFastSkim/events.pck\" ]; then  echo \"mv Calibrated-DATA-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    ls  --color=none Calibrated-DATA-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-DATA-SR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-DATA-SR-2018/"$1" .\"; fi"'}  | /bin/sh
     
     
     
