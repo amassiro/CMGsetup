@@ -212,10 +212,10 @@ After calibration performed:
     
     cd ../
     
-    haddChunks.py DATA-CR-2018/
+    haddChunks.py Calibrated-DATA-CR-2018/
 
 
-    mkdir /eos/cms/store/group/phys_exotica/xtracks/1May2019/DATA-CR-2018-Hadded/
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018-Hadded/
                                                  
                                                  
                                                  
@@ -245,6 +245,8 @@ Fixes:
     
     ls  --color=none Calibrated-DATA-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-DATA-SR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-DATA-SR-2018/"$1" .\"; fi"'}  | /bin/sh
     
+    
+    ls  --color=none Calibrated-MC-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
     
     
     
