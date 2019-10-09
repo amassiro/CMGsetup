@@ -201,6 +201,11 @@ After calibration performed:
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                                  
                                                  
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-2018/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+
+                                                 
 
     mkdir /tmp/test/
     cd /tmp/test/
@@ -227,6 +232,9 @@ After calibration performed:
 
          -->   0 for k-factor=1 , 1 for Z, 2 for W
     
+    
+    ls --color=never  /tmp/test3/Calibrated-MC-SR-2018-Hadded-2/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test3/Calibrated-MC-SR-2018-Hadded-2/ "$1" 0  "}'
+
     
     ls --color=never  Calibrated-MC-SR-2018/  | grep -v "Chunk" | awk '{print "rm -r Calibrated-MC-SR-2018/"$1}'
     
@@ -262,6 +270,20 @@ Fixes:
     ls  --color=none Calibrated-MC-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/metAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
     
     ls  --color=none Calibrated-MC-SR-2018/ | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/JSONAnalyzer/RLTInfo.root\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    ls  --color=none Calibrated-MC-SR-2018/ | grep -v "DYJetsToLL_M50_HT200to400_Chunk101" | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/JSONAnalyzer/RLTInfo.root\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    
+    ls  --color=none Calibrated-MC-SR-2018/ | grep "ZvvJets_HT400to600_Chunk" | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/JSONAnalyzer/RLTInfo.root\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    
+    ls  --color=none Calibrated-MC-SR-2018/ | grep "DYJetsToLL_M50_HT200to400_Chunk" | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/JSONAnalyzer/RLTInfo.root\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    ls  --color=none Calibrated-MC-SR-2018/ | grep "ZvvJets_HT100to200_Chunk" | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/JSONAnalyzer/RLTInfo.root\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    ls  --color=none Calibrated-MC-SR-2018/ | grep "QCD_HT300to500_Chunk" | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018/"$1"/JSONAnalyzer/RLTInfo.root\" ]; then  echo \"mv Calibrated-MC-SR-2018/"$1" .\"; fi"'}  | /bin/sh
+    
+    
     
     
     
