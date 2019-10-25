@@ -311,4 +311,15 @@ Chunk ./jobs_desc_DYJetsToLL_M50_HT600to800.cfg does not contain url file ./jobs
 Chunk ./DYJetsToLL_M50_HT100to200_Chunk36 does not contain url file ./DYJetsToLL_M50_HT100to200_Chunk36/treeProducerXtracks/tree.root.url
 
 
+Missing:
 
+    DY: 100to200, 1200to2500, 2500toInf
+    WJets: 2500toInf
+    ZvvJets: 200to400, 2500toInf
+    
+    QCD_HT100to200
+    QCD_HT500to700
+    DYJetsToLL_M50_HT600to800
+    WJetsToLNu_HT1200to2500
+    
+    
