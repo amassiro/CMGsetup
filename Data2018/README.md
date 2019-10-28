@@ -200,13 +200,22 @@ After calibration performed:
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018/   --option region=sr --option run=mc   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                                  
-                                                 
+    
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-2018/\
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-2018/   --option region=sr --option run=sig   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
 
-                                                 
 
+                                                 
+                                                 
+                                                 
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-SR-2018-Apendix/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Apendix/   --option region=sr --option run=mc   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+
+                                                 
     mkdir /tmp/test/
     cd /tmp/test/
     
@@ -322,4 +331,5 @@ Missing:
     DYJetsToLL_M50_HT600to800
     WJetsToLNu_HT1200to2500
     
-    
+--> -Appendix
+
