@@ -235,10 +235,13 @@ After calibration performed:
     ls Calibrated-SIG-SR-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-2018-Hadded/"}'
     ls Calibrated-MC-SR-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-SR-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Hadded/"}'
     ls Calibrated-MC-CR-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-CR-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-CR-2018-Hadded/"}'
+    
+    ls Calibrated-MC-SR-2018-Apendix/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-SR-2018-Apendix/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Apendix-Hadded/"}'
 
          
     ls --color=never  /tmp/test/SIG-SR/ | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/SIG-SR/ "$1" 0  "}'
     ls --color=never  /tmp/test3/Calibrated-MC-SR-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test3/Calibrated-MC-SR-2018/ "$1" 0  "}'
+    ls --color=never  /tmp/test/Calibrated-MC-SR-2018-Apendix/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix "$1" 0  "}'
 
          -->   0 for k-factor=1 , 1 for Z, 2 for W
     
@@ -295,7 +298,10 @@ Fixes:
     
     
     
-    
+    ls  --color=none Calibrated-MC-SR-2018-Apendix/ | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018-Apendix/"$1"/PileUpAnalyzer/puWeight.pck\" ]; then  echo \"mv Calibrated-MC-SR-2018-Apendix/"$1" .\"; fi"'}  | /bin/sh
+
+        
+        
     
     
 Summary of failed download attempts (7 in total):
@@ -332,4 +338,18 @@ Missing:
     WJetsToLNu_HT1200to2500
     
 --> -Appendix
+
+
+
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ DYJetsToLL_M50_HT100to200 1  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ DYJetsToLL_M50_HT1200to2500 1  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ DYJetsToLL_M50_HT2500toInf 1  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ DYJetsToLL_M50_HT600to800 1  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ QCD_HT100to200 0  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ QCD_HT500to700 0  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ WJetsToLNu_HT1200to2500 2  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ WJetsToLNu_HT2500toInf 2  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ ZvvJets_HT200to400 1  
+python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ ZvvJets_HT2500toInf 1  
+
 
