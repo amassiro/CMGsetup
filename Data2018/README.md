@@ -353,3 +353,16 @@ python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ ZvvJets_HT200to400 
 python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix/ ZvvJets_HT2500toInf 1  
 
 
+
+
+
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/DYJetsToLL_M50_HT100to200
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/QCD_HT100to200
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/ZvvJets_HT200to400
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/DYJetsToLL_M50_HT1200to2500
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/QCD_HT500to700
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/ZvvJets_HT2500toInf
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/DYJetsToLL_M50_HT2500toInf
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/WJetsToLNu_HT1200to2500
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/DYJetsToLL_M50_HT600to800
+ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/WJetsToLNu_HT2500toInf
