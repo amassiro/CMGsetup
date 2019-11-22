@@ -206,7 +206,10 @@ After calibration performed:
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
 
 
-                                                 
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-new-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-new-2018/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+                                             
                                                  
                                                  
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-SR-2018-Apendix/\
