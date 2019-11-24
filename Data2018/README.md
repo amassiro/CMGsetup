@@ -180,6 +180,10 @@ Control region:
 
 After calibration performed:
 
+    export X509_USER_PROXY=/afs/cern.ch/user/a/amassiro/private/cms.proxy
+    
+    
+
     
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-DATA-CR-2018/\
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018/   --option region=cr1l --option run=data   \
@@ -302,6 +306,14 @@ Fixes:
     
     
     ls  --color=none Calibrated-MC-SR-2018-Apendix/ | awk {'print "if [ ! -f \"Calibrated-MC-SR-2018-Apendix/"$1"/PileUpAnalyzer/puWeight.pck\" ]; then  echo \"mv Calibrated-MC-SR-2018-Apendix/"$1" .\"; fi"'}  | /bin/sh
+
+    
+    ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/skimAnalyzerCount/SkimReport.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/leptonAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/isoTrackDeDxAna/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
+
+
+
 
         
         
