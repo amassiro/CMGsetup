@@ -244,11 +244,13 @@ After calibration performed:
     ls Calibrated-MC-CR-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-CR-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-CR-2018-Hadded/"}'
     
     ls Calibrated-MC-SR-2018-Apendix/ | grep -v Chunk | awk '{print "cp -r Calibrated-MC-SR-2018-Apendix/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Apendix-Hadded/"}'
+    ls Calibrated-SIG-SR-new-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-new-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-new-2018-Hadded/"}'
 
          
     ls --color=never  /tmp/test/SIG-SR/ | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/SIG-SR/ "$1" 0  "}'
     ls --color=never  /tmp/test3/Calibrated-MC-SR-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test3/Calibrated-MC-SR-2018/ "$1" 0  "}'
     ls --color=never  /tmp/test/Calibrated-MC-SR-2018-Apendix/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix "$1" 0  "}'
+    ls --color=never  /tmp/test2/Calibrated-SIG-SR-new-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test2/Calibrated-SIG-SR-new-2018/ "$1" 0  "}'
 
          -->   0 for k-factor=1 , 1 for Z, 2 for W
     
@@ -311,6 +313,8 @@ Fixes:
     ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/skimAnalyzerCount/SkimReport.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
     ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/leptonAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
     ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/isoTrackDeDxAna/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=none Calibrated-SIG-SR-new-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-new-2018/"$1"/JSONAnalyzer/JSON.pck\" ]; then  echo \"mv Calibrated-SIG-SR-new-2018/"$1" .\"; fi"'}  | /bin/sh
+
 
 
 
