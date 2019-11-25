@@ -256,6 +256,7 @@ After calibration performed:
     
     
     ls --color=never  /tmp/test3/Calibrated-MC-SR-2018-Hadded-2/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test3/Calibrated-MC-SR-2018-Hadded-2/ "$1" 0  "}'
+    ls --color=never  /tmp/test/Calibrated-SIG-SR-2018-Hadded/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-SIG-SR-2018-Hadded/ "$1" 0  "}'
 
     
     ls --color=never  Calibrated-MC-SR-2018/  | grep -v "Chunk" | awk '{print "rm -r Calibrated-MC-SR-2018/"$1}'
