@@ -222,7 +222,19 @@ After calibration performed:
     
     
 
-                                                 
+     
+     
+    hadd tree1.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_1*.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_2*.root   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_3*.root
+
+    
+    hadd tree2.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_4*.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_5*.root 
+    
+    hadd tree3.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_6*.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_7*.root 
+    
+    hadd tree4.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_8*.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_9*.root 
+    
+    
+    
     mkdir /tmp/test/
     cd /tmp/test/
     
