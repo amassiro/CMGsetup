@@ -183,7 +183,8 @@ After calibration performed:
     export X509_USER_PROXY=/afs/cern.ch/user/a/amassiro/private/cms.proxy
     
     
-
+    voms-proxy-init -voms cms
+    
     
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-DATA-CR-2018/\
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018/   --option region=cr1l --option run=data   \
