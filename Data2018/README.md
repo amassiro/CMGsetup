@@ -203,7 +203,11 @@ After calibration performed:
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-SR-2018/\
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018/   --option region=sr --option run=mc   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
-                                                 
+    
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-ext-SR-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-ext-SR-2018/   --option region=sr --option run=mc   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
     
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-2018/\
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-2018/   --option region=sr --option run=sig   \
@@ -233,6 +237,10 @@ After calibration performed:
     
     hadd tree4.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_8*.root /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018/MET_Run2018D_PromptReco_v2/treeProducerXtracks_tree_9*.root 
     
+    cp tree1.root  /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018-Hadded/MET_Run2018D_PromptReco_v2_1/treeProducerXtracks/tree.root
+    cp tree2.root  /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018-Hadded/MET_Run2018D_PromptReco_v2_2/treeProducerXtracks/tree.root
+    cp tree3.root  /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018-Hadded/MET_Run2018D_PromptReco_v2_3/treeProducerXtracks/tree.root
+    cp tree4.root  /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018-Hadded/MET_Run2018D_PromptReco_v2_4/treeProducerXtracks/tree.root
     
     
     mkdir /tmp/test/
