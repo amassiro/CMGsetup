@@ -673,10 +673,23 @@ Test:
     change the name of the process from "RECO" to "MyRECO"
     
     cmsRun reco_data_ZmumuSkim_cfg.py
+      
+
     
     
+    cmsDriver.py step12 --filein file:/tmp/amassiro/test.reco.root  --fileout file:/tmp/amassiro/test.reco.aod.root  --data --eventcontent MINIAOD --runUnscheduled --datatier MINIAOD --conditions 94X_dataRun2_v11  --step PAT --nThreads 8 --era Run2_2017 --python_filename aod_data_ZmumuSkim_cfg.py --customise_commands 'process.MINIAODEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*", "keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned_generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*"])'   --scenario pp --customise Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2017      --no_exec -n 10
     
-    cmsDriver.py step12 --filein file:/tmp/amassiro/test.root  --fileout file:/tmp/amassiro/test.reco.root  --data --eventcontent MINIAOD --runUnscheduled --datatier MINIAOD --conditions 94X_dataRun2_v11  --step RAW2DIGI,RECO,PAT --nThreads 8 --era Run2_2017 --python_filename recoaod_data_ZmumuSkim_cfg.py --customise_commands 'process.MINIAODEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*", "keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned _generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*"])'         --no_exec -n 10
+    change the name of the process from "RECO" to "MyRECO"
+    
+    edmConfigDump aod_data_ZmumuSkim_cfg.py > dump_aod_data_ZmumuSkim_cfg.py
+
+    cmsRun aod_data_ZmumuSkim_cfg.py
+
+    
+    
+ 
+ 
+    cmsDriver.py step12 --filein file:/tmp/amassiro/test.root  --fileout file:/tmp/amassiro/test.reco.aod.root  --data --eventcontent MINIAOD --runUnscheduled --datatier MINIAOD --conditions 94X_dataRun2_v11  --step RAW2DIGI,RECO,PAT --nThreads 8 --era Run2_2017 --python_filename recoaod_data_ZmumuSkim_cfg.py --customise_commands 'process.MINIAODEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*", "keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned_generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*"])'         --no_exec -n 10
     
     change the name of the process from "RECO" to "MyRECO"
     
