@@ -410,3 +410,21 @@ ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/DYJetsToLL_M50_HT2500toInf
 ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/WJetsToLNu_HT1200to2500
 ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/DYJetsToLL_M50_HT600to800
 ln -s ../Calibrated-MC-SR-2018-Apendix-Hadded/WJetsToLNu_HT2500toInf
+
+
+
+
+PickEvents
+====
+
+/MET/Run2018A-v1/RAW
+/MET/Run2017F-v1/RAW
+
+    edmPickEvents.py  "/MET/Run2017C-v1/RAW" 325170:10:1702657643
+    
+    /eos/cms/store/group/phys_exotica/xtracks/
+    
+    https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookPickEvents
+    
+    
+    
