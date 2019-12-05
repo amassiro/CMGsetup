@@ -670,13 +670,21 @@ Test:
     
     cmsDriver.py step2 --filein file:/tmp/amassiro/test.root  --fileout file:/tmp/amassiro/test.reco.root  --data --eventcontent FEVTDEBUGHLT --runUnscheduled --datatier FEVTDEBUGHLT --conditions 94X_dataRun2_v11  --step RAW2DIGI,RECO --nThreads 8 --era Run2_2017 --python_filename reco_data_ZmumuSkim_cfg.py --no_exec -n 10
 
+    change the name of the process from "RECO" to "MyRECO"
+    
     cmsRun reco_data_ZmumuSkim_cfg.py
     
-    cmsDriver.py step12 --filein file:/tmp/amassiro/test.root  --fileout file:/tmp/amassiro/test.reco.root  --data --eventcontent MINIAODSIM --runUnscheduled --datatier MINIAODSIM --conditions 94X_dataRun2_v11  --step RAW2DIGI,RECO,PAT --nThreads 8 --era Run2_2017 --python_filename recoaod_data_ZmumuSkim_cfg.py --customise_commands 'process.MINIAODEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*", "keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned _generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep StripDigiSimLinkedmDetSetVector _simSiStripDigis_*_*"])'         --no_exec -n 10
     
+    
+    cmsDriver.py step12 --filein file:/tmp/amassiro/test.root  --fileout file:/tmp/amassiro/test.reco.root  --data --eventcontent MINIAOD --runUnscheduled --datatier MINIAOD --conditions 94X_dataRun2_v11  --step RAW2DIGI,RECO,PAT --nThreads 8 --era Run2_2017 --python_filename recoaod_data_ZmumuSkim_cfg.py --customise_commands 'process.MINIAODEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*", "keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned _generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*"])'         --no_exec -n 10
+    
+    change the name of the process from "RECO" to "MyRECO"
+    
+    edmConfigDump recoaod_data_ZmumuSkim_cfg.py > dump_recoaod_data_ZmumuSkim_cfg.py
+
     cmsRun recoaod_data_ZmumuSkim_cfg.py
     
-
+    
 
     
     
