@@ -675,7 +675,8 @@ Test:
     cmsRun reco_data_ZmumuSkim_cfg.py
       
 
-    
+    cmsDriver.py step12 --filein file:/tmp/amassiro/test.reco.root  --fileout file:/tmp/amassiro/test.reco.aod.root  --data --eventcontent MINIAOD --runUnscheduled --datatier MINIAOD --conditions 94X_dataRun2_v11  --step PAT --nThreads 8 --era Run2_2017 --python_filename aod_data_ZmumuSkim_cfg.py   --scenario pp --customise 
+        
     
     cmsDriver.py step12 --filein file:/tmp/amassiro/test.reco.root  --fileout file:/tmp/amassiro/test.reco.aod.root  --data --eventcontent MINIAOD --runUnscheduled --datatier MINIAOD --conditions 94X_dataRun2_v11  --step PAT --nThreads 8 --era Run2_2017 --python_filename aod_data_ZmumuSkim_cfg.py --customise_commands 'process.MINIAODEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*", "keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned_generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*"])'   --scenario pp --customise Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2017      --no_exec -n 10
     
