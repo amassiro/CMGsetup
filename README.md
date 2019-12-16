@@ -324,6 +324,16 @@ For condor, declaring 480 mins of job time (wall clock time)
     haddChunks.py MC-SR-4/
 
     
+2017 prefire test
+====
+
+Where:
+
+    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg
+    
+    
+    
+    
     
 Nice cleaning:
 
