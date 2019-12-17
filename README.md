@@ -734,11 +734,21 @@ Now on grid for signal samples:
     voms-proxy-init -voms cms -rfc
     
     
-     heppy_batch.py  run_susyDeDx_onlyPrefire_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR-PREFIRE/\
+    heppy_batch.py  run_susyDeDx_onlyPrefire_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR-PREFIRE/\
     -r    /store/group/phys_exotica/xtracks/6Mar2019/SIG-SR-PREFIRE/   --option region=sr --option run=sig   \
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
+In case of problems while submitting on condor
+
+    in
     
+      run_condor_simple.sh
+    
+    you should have
+      
+      x509userproxy = \$ENV(X509_USER_PROXY)
+      use_x509userproxy = True
+
     
     
     
