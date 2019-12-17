@@ -323,17 +323,7 @@ For condor, declaring 480 mins of job time (wall clock time)
 
     haddChunks.py MC-SR-4/
 
-    
-2017 prefire test
-====
-
-Where:
-
-    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg
-    
-    
-    
-    
+     
     
 Nice cleaning:
 
@@ -719,5 +709,36 @@ Test:
     
     
 
+    
+
+2017 prefire test
+====
+
+Where:
+
+    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg
+    
+    
+Data test:
+
+    xrdcp root://xrootd.unl.edu///store/mc/RunIIAutumn18MiniAOD/DYJetsToLL_M-50_HT-800to1200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15-v2/90000/FB3B40F9-0C73-C144-BB08-8E2DFB7AD448.root    /tmp/amassiro/
+    
+    
+    heppy Test run_susyDeDx_onlyPrefire_cfg.py --option region=cr1l   --option test=1E   --option run=mc
+    heppy Test run_susyDeDx_onlyPrefire_cfg.py --option region=cr1l   --option test=1E   --option run=mc   -N 1000
+
+    
+Now on grid for signal samples:
+
+    
+    voms-proxy-init -voms cms -rfc
+    
+    
+     heppy_batch.py  run_susyDeDx_onlyPrefire_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR-PREFIRE/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/SIG-SR-PREFIRE/   --option region=sr --option run=sig   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    
     
     
