@@ -7,7 +7,7 @@ Recommendation for HEM:
     https://twiki.cern.ch/twiki/bin/view/CMS/SUSRecommendationsRun2Legacy
     https://hypernews.cern.ch/HyperNews/CMS/get/JetMET/2000.html
 
-This is the "recipe" from jetemet.
+This is the "recipe" from jetmet.
 
 From the thread:
 
