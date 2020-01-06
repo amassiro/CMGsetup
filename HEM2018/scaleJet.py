@@ -76,9 +76,6 @@ for entry in tree :
   met_pt_hem[0] = new_met.Pt()
   
   
-  # treeOut
-  
-  
   treeOut.Fill()
   
   num += 1
