@@ -13,9 +13,11 @@ From the thread:
 
 In the mean time, we suggest analysts to check the possible impact of
 the undercalibration of this region in the following way.
-In MC, scale down the jet energy by
+In MC, scale down the jet energy by:
+
     20 % for jets with -1.57 <phi< -0.87 and -2.5<eta<-1.3
     35 % for jets with -1.57 <phi< -0.87 and -3.0<eta<-2.5
+
 (all jets with pt>15 GeV passing the tight ID -in order to reject
 muons/electrons-, and propagate this to the MET as well)
 Then check the change with respect to the nominal calibration.
