@@ -749,3 +749,48 @@ In case of problems while submitting on condor
     
     
     
+New signal samples
+====
+
+    supernew
+    
+    #/eos/cms/store/group/phys_susy/xtracks/600GeV10cm/
+    #/eos/cms/store/group/phys_susy/xtracks/300GeV30cm/
+    
+    
+    cd /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/
+    
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-supernew-2017/\
+                                                 -r    /store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-supernew-2017/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+                                                 
+                                                 
+    mkdir /tmp/test/
+    cd /tmp/test/
+    
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-supernew-2017/ .
+    cd Calibrated-SIG-SR-supernew-2017/
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c    -j 4
+    
+    cd ../
+    
+    haddChunks.py Calibrated-SIG-SR-supernew-2017/
+
+
+    
+    cd  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/macros/xtracks/
+    ls --color=never  /tmp/test/Calibrated-SIG-SR-supernew-2017/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-SIG-SR-supernew-2017/ "$1" 0  "}'
+    
+
+    
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-supernew-2017-Hadded/
+                                                 
+    ls Calibrated-SIG-SR-supernew-2017/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-supernew-2017/"$1"   /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-supernew-2017-Hadded/"}'
+
+    
+
+
+    
+    
