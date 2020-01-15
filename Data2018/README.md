@@ -223,6 +223,9 @@ After calibration performed:
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-new-2018/   --option region=sr --option run=sig   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                              
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-supernew-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-supernew-2018/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                                  
     heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-MC-SR-2018-Apendix/\
                                                  -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Apendix/   --option region=sr --option run=mc   \
@@ -427,6 +430,55 @@ PickEvents
     https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookPickEvents
     
     
+ 
+ 
+New signal samples
+====
+
+    supernew
     
+    
+    heppy_batch.py  run_susyDeDx_2018_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-supernew-2018/\
+                                                 -r    /store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-supernew-2018/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+                                                 
+                                                 
+    mkdir /tmp/test/
+    cd /tmp/test/
+    
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/1May2019/CMSSW_10_4_0/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-supernew-2018/ .
+    cd Calibrated-SIG-SR-supernew-2018/
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c    -j 4
+    
+    cd ../
+    
+    haddChunks.py Calibrated-DATA-CR-2018/
+
+
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018-Hadded/
+                                                 
+    ls Calibrated-SIG-SR-supernew-2018/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-supernew-2018/"$1"   /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-supernew-2018-Hadded/"}'
+
+         
+    ls --color=never  /tmp/test/SIG-SR/ | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/SIG-SR/ "$1" 0  "}'
+    ls --color=never  /tmp/test3/Calibrated-MC-SR-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test3/Calibrated-MC-SR-2018/ "$1" 0  "}'
+    ls --color=never  /tmp/test/Calibrated-MC-SR-2018-Apendix/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-MC-SR-2018-Apendix "$1" 0  "}'
+    ls --color=never  /tmp/test2/Calibrated-SIG-SR-supernew-2018/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test2/Calibrated-SIG-SR-supernew-2018/ "$1" 0  "}'
+
+
+    
+    
+    ls  --color=none Calibrated-SIG-SR-supernew-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2018/"$1"/skimAnalyzerCount/SkimReport.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2018/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=none Calibrated-SIG-SR-supernew-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2018/"$1"/leptonAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2018/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=none Calibrated-SIG-SR-supernew-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2018/"$1"/isoTrackDeDxAna/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2018/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=none Calibrated-SIG-SR-supernew-2018/ | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2018/"$1"/JSONAnalyzer/JSON.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2018/"$1" .\"; fi"'}  | /bin/sh
+
+
+
+
+
+
+
 
     
