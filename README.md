@@ -779,6 +779,8 @@ New signal samples
     haddChunks.py Calibrated-SIG-SR-supernew-2017/
 
 
+    ls  Calibrated-SIG-SR-supernew-2017/  | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2017/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2017/"$1" .\"; fi"'}  | /bin/sh
+
     
     cd  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/macros/xtracks/
     ls --color=never  /tmp/test/Calibrated-SIG-SR-supernew-2017/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-SIG-SR-supernew-2017/ "$1" 0  "}'
