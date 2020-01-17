@@ -741,6 +741,13 @@ Now on grid for signal samples:
     -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
     
     
+    heppy_batch.py  run_susyDeDx_onlyPrefire_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/SIG-SR-PREFIRE-supernew/\
+    -r    /store/group/phys_exotica/xtracks/6Mar2019/SIG-SR-PREFIRE-supernew/   --option region=sr --option run=sig   \
+    -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+    
+    
+    
+    
 In case of problems while submitting on condor
 
     export X509_USER_PROXY=$HOME/private/cms.proxy
@@ -779,7 +786,7 @@ New signal samples
     haddChunks.py Calibrated-SIG-SR-supernew-2017/
 
 
-    ls  Calibrated-SIG-SR-supernew-2017/  | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2017/"$1"/tauAnalyzer/events.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2017/"$1" .\"; fi"'}  | /bin/sh
+    ls  --color=never   Calibrated-SIG-SR-supernew-2017/  | awk {'print "if [ ! -f \"Calibrated-SIG-SR-supernew-2017/"$1"/JSONAnalyzer/JSON.pck\" ]; then  echo \"mv Calibrated-SIG-SR-supernew-2017/"$1" .\"; fi"'}  | /bin/sh
 
     
     cd  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/macros/xtracks/
