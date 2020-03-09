@@ -851,7 +851,14 @@ New signal samples, without MET cut at gen level
     ls Calibrated-SIG-SR-supernew-nometfilter-2017/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-supernew-nometfilter-2017/"$1"   /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-supernew-nometfilter-2017-Hadded/"}'
 
 
+Condor problems
+====
+
+    cernbatchsubmit
     
+    export _condor_SCHEDD_HOST="bigbird15.cern.ch"
+    export _condor_CREDD_HOST="bigbird15.cern.ch"
+
     
     
     
