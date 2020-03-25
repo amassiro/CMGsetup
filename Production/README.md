@@ -1,6 +1,10 @@
 Production of private sample
 ====
 
+Where:
+
+    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/Production/CMSSW_9_4_7/src
+    
 Input: 
     
     /store/group/phys_susy/xtracks/500GeV10cm_noFilter/
@@ -14,6 +18,13 @@ Input:
     
 # SIM-DIGI step with PU premixing
 
+From
+
+    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/Production/CMSSW_9_4_7/src
+    
+    
+    
+    
         cmsDriver.py \
         --datatier GEN-SIM-RAW \
         --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer17PrePremix-MCv2_correctPU_94X_mc2017_realistic_v9-v1/GEN-SIM-DIGI-RAW" \
@@ -61,6 +72,12 @@ GENSIM:   93X_mc2017_realistic_v3
         
 # RECO step
 
+
+From
+
+    /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/Production/CMSSW_9_4_7/src
+    
+    
       cmsDriver.py \
       --step RAW2DIGI,RECO,RECOSIM,EI \
       --mc \
@@ -78,6 +95,30 @@ GENSIM:   93X_mc2017_realistic_v3
       -n -1 \
       --no_exec
 
+      
+      
+      
+      cmsDriver.py \
+      --step RAW2DIGI,RECO,RECOSIM,EI \
+      --mc \
+      --datatier RECO \
+      --conditions 94X_mc2017_realistic_v14 \
+      --eventcontent AODSIM \
+      --era Run2_2017 \
+      --nThreads 8 \
+      --runUnscheduled  \
+      --filein file:chargino500GeV_ctau10cm_GEN-SIM-RAW_MY.root \
+      --fileout file:/tmp/amassiro/chargino500GeV_ctau10cm_GEN-SIM-RAW-RECO_MY.root \
+      --python_filename chargino500GeV_ctau10cm_GEN-SIM-RAW-RECO_MY.py \
+      --customise Configuration/DataProcessing/Utils.addMonitoring,SimG4Core/CustomPhysics/GenPlusSimParticles_cfi.customizeProduce,SimG4Core/CustomPhysics/GenPlusSimParticles_cfi.customizeKeep \
+      --customise_commands 'process.AODSIMEventContent.outputCommands.extend(["keep *_siPixelClusters_*_*", "keep *_siStripClusters_*_*", "keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep TrackingRecHitsOwned_generalTracks_*_*", "keep *_trackingParticleRecoTrackAsssociation_*_*"])' \
+      -n -1 \
+      --no_exec
+
+      
+      
+      
+      
 # MINIAOD step
 
       cmsDriver.py miniAOD \
