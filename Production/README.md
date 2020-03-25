@@ -64,6 +64,10 @@ From
         --no_exec
 
 
+Output in :
+
+        /eos/cms/store/cmst3/user/amassiro/CMG/chargino500GeV_ctau10cm_GEN-SIM-RAW_MY.root
+
         
 GENSIM:   93X_mc2017_realistic_v3
 94X_mc2017_realistic_v11
@@ -107,7 +111,7 @@ From
       --era Run2_2017 \
       --nThreads 8 \
       --runUnscheduled  \
-      --filein file:chargino500GeV_ctau10cm_GEN-SIM-RAW_MY.root \
+      --filein file:/tmp/amassiro/chargino500GeV_ctau10cm_GEN-SIM-RAW_MY.root \
       --fileout file:/tmp/amassiro/chargino500GeV_ctau10cm_GEN-SIM-RAW-RECO_MY.root \
       --python_filename chargino500GeV_ctau10cm_GEN-SIM-RAW-RECO_MY.py \
       --customise Configuration/DataProcessing/Utils.addMonitoring,SimG4Core/CustomPhysics/GenPlusSimParticles_cfi.customizeProduce,SimG4Core/CustomPhysics/GenPlusSimParticles_cfi.customizeKeep \
