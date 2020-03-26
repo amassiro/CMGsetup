@@ -144,3 +144,23 @@ From
       
       
       
+      cmsDriver.py miniAOD \
+      --step PAT \
+      --datatier MINIAODSIM \
+      --conditions 94X_mc2017_realistic_v14 \
+      --eventcontent MINIAODSIM \
+      --era Run2_2017 \
+      --mc \
+      --filein file:/tmp/amassiro/chargino500GeV_ctau10cm_GEN-SIM-RAW-RECO_MY.root \
+      --fileout file:/tmp/amassiro/chargino500GeV_ctau10cm_miniaod_MY.root \
+      --python_filename chargino500GeV_ctau10cm_miniAOD_MY.py \
+      --customise Configuration/DataProcessing/Utils.addMonitoring,SimG4Core/CustomPhysics/GenPlusSimParticles_cfi.customizeProduce,SimG4Core/CustomPhysics/GenPlusSimParticles_cfi.customizeKeep \
+      --customise_commands 'process.MINIAODSIMEventContent.outputCommands.extend(["keep *_dedxHitInfo_*_*", "keep recoTrackExtras_generalTracks_*_*", "keep *_isolatedTracks_*_*", "keep recoGenParticles_prunedGenParticles_*_*"])' \
+      -n -1 \
+      --no_exec \
+      --runUnscheduled
+
+
+      
+      
+      
