@@ -64,6 +64,12 @@ file dataset=/AMSB_chargino_M-600_CTau-10_TuneCP5_13TeV_pythia8/ahart-RunIIFall1
 To Run:
 ====
 
+    cd /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/27Feb2020/CMSSW_10_4_0/src/LatinoTreesGEN/GenDumper/test
+    
+    cmsenv
+    
+    voms-proxy-init --voms cms -rfc
+
 
     cmsRun gendumper_cfg.py   inputFiles=many::samples_private_500GeV_10cm_Ohio.py \
                               outputFile=/tmp/amassiro/private_500GeV_10cm_Ohio.root  \
