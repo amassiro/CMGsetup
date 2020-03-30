@@ -111,46 +111,10 @@ Plot
 ====
 
 
-    cmsRun gendumper_cfg.py   inputFiles=/store/group/phys_susy/xtracks/500GeV10cm/miniAOD-PU/chargino500GeV_ctau10cm_miniAOD_119.root  \
-                              outputFile=/tmp/amassiro/private_500GeV_10cm.root  \
-                              isMiniAod=True  \
-                              doLHE=False \
-                              mcLHERunInfoTag="" 
-
     ls -alrth /eos/cms/store/group/phys_susy/xtracks/500GeV10cm/miniAOD-PU/c* | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_private_500GeV_10cm_metcut.py
 
-    
-    cmsRun gendumper_cfg.py   inputFiles=many::samples_private_500GeV_10cm_metcut.py  \
-                              outputFile=/tmp/amassiro/private_500GeV_10cm.root  \
-                              isMiniAod=True  \
-                              doLHE=False \
-                              mcLHERunInfoTag="" 
-    
-    
-    
-    r99t /tmp/amassiro/private_500GeV_10cm.root    DrawVariable.cxx\(\"njet\",5,0,5,\"1\",0\) 
-    r99t /tmp/amassiro/private_500GeV_10cm.root    DrawVariable.cxx\(\"jetpt1\",20,0,500,\"1\",0\) 
-    r99t /tmp/amassiro/private_500GeV_10cm.root    DrawVariable.cxx\(\"genMetTrue\",20,0,500,\"1\",0\) 
-    
-
-    
-    cmsRun gendumper_cfg.py   inputFiles=/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_500_cTau_10.merged/Wino_M_500_cTau_10.MiniAODv2ext1_job6.root  \
-                              outputFile=/tmp/amassiro/petrucciani_500GeV_10cm.root  \
-                              isMiniAod=True  \
-                              doLHE=False \
-                              mcLHERunInfoTag="" 
-
-                              
     ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_500_cTau_10.merged/W* | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG.py
 
-    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG.py  \
-                              outputFile=/tmp/amassiro/petrucciani_500GeV_10cm.root  \
-                              isMiniAod=True  \
-                              doLHE=False \
-                              mcLHERunInfoTag="" 
-
-                              
-    r99t /tmp/amassiro/petrucciani_500GeV_10cm.root    DrawVariable.cxx\(\"genMetTrue\",20,0,500,\"1\",0\) 
     
     
     
@@ -320,7 +284,15 @@ Plot
     
     
     
-           
+      
+      
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"\(std_vector_CharginoGen_status[0]\)\",100,-50,50,\"1\",0,1.0,1.0\) 
+      
+      
+      
+      
 
            
     
