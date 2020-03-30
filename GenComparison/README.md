@@ -267,6 +267,26 @@ Plot
            /tmp/amassiro/petrucciani_500GeV_10cm.root           \
            DrawCompare.cxx\(\"\(@std_vector_CharginoGen_pt.size\(\)\)\",10,0,10,\"1\",0,1.0,1.0\) 
     
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
+           DrawCompare.cxx\(\"\(@std_vector_CharginoGen_pt.size\(\)\)\",30,0,30,\"1\",0,1.0,1.0\) 
+    
+    
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
+           DrawCompare.cxx\(\"\(abs\(std_vector_CharginoGen_id\)\=\=1000024\)\+2\*\(abs\(std_vector_CharginoGen_id\)\=\=1000037\)\",8,0,4,\"\(@std_vector_CharginoGen_pt.size\(\)\>0\)\",0,1.0,1.0\) 
+     
+    1000024 || 1000037
+    
+    
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
+           DrawCompare.cxx\(\"\std_vector_CharginoGen_status\",100,0,100,\"\(@std_vector_CharginoGen_pt.size\(\)\>0\)\",0,1.0,1.0\) 
+     
+     
+     
+     
+     
     
     r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
            /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
