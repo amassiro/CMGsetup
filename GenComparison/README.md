@@ -77,7 +77,11 @@ To Run:
                               doLHE=False \
                               mcLHERunInfoTag="" 
 
-                             
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
+                              outputFile=/tmp/amassiro/private_500GeV_10cm_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
 
     cmsRun gendumper_cfg.py   inputFiles=many::samples_private_500GeV_10cm_metcut.py  \
                               outputFile=/tmp/amassiro/private_500GeV_10cm.root  \
@@ -92,14 +96,7 @@ To Run:
                               doLHE=False \
                               mcLHERunInfoTag="" 
 
-     cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
-                              outputFile=/tmp/amassiro/private_500GeV_10cm_nomet.root  \
-                              isMiniAod=True  \
-                              doLHE=False \
-                              mcLHERunInfoTag="" 
-
-
-    cmsRun gendumper_cfg.py   inputFiles=many::samples_600GeV10cm.py  \
+         cmsRun gendumper_cfg.py   inputFiles=many::samples_600GeV10cm.py  \
                               outputFile=/tmp/amassiro/private_600GeV_10cm.root  \
                               isMiniAod=True  \
                               doLHE=False \
