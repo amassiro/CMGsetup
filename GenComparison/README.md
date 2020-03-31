@@ -312,8 +312,13 @@ Plot
       
       
       
-      
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,1000,\"1\",0,1.0,1.0\) 
 
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,1000,\"1\",0,1.0,1.0\) 
            
     
      chargino-pair pt for two-track events
