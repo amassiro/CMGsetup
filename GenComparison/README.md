@@ -96,7 +96,7 @@ To Run:
                               doLHE=False \
                               mcLHERunInfoTag="" 
 
-         cmsRun gendumper_cfg.py   inputFiles=many::samples_600GeV10cm.py  \
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_600GeV10cm.py  \
                               outputFile=/tmp/amassiro/private_600GeV_10cm.root  \
                               isMiniAod=True  \
                               doLHE=False \
@@ -283,6 +283,9 @@ Plot
      
      
      
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"\(@std_vector_CharginoGen_pt.size\(\)\)\",10,0,10,\"1\",0,1.0,1.0\) 
      
     
     r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
