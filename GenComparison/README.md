@@ -325,9 +325,20 @@ Plot
      chargino-neutralino pair pt for single track events
      
        
+       
     
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"\(@std_vector_CharginoGen_pt.size\(\)\)\",10,0,10,\"1\",0,1.0,1.0\) 
     
-    
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
+           DrawCompare.cxx\(\"\(@std_vector_CharginoGen_pt.size\(\)\)\",30,0,30,\"1\",0,1.0,1.0\) 
+           
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"diCharginoPT\",200,0,3000,\"\(@std_vector_CharginoGen_pt.size\(\)\=\=2\)\",0,1.0,1.0\) 
+        
     
     
     
