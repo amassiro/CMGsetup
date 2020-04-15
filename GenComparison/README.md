@@ -103,6 +103,21 @@ To Run:
                               mcLHERunInfoTag="" 
                           
 
+                          
+Measure gen met cut efficiency
+
+
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,1.0\) 
+           
+    From the ratio plot: 0.13157895
+           
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,0.13157895\) 
+           
+           
 
 Plot
 ====

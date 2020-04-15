@@ -876,8 +876,8 @@ New signal samples, with MET cut at gen level and correct GT
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                                  
                                                  
-    mkdir /tmp/test/
-    cd /tmp/test/
+    mkdir /tmp/test2/
+    cd /tmp/test2/
     
     cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-metfilter-newGT-2017/ .
     cd Calibrated-SIG-SR-metfilter-newGT-2017/
@@ -893,7 +893,7 @@ New signal samples, with MET cut at gen level and correct GT
 
     
     cd  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/macros/xtracks/
-    ls --color=never  /tmp/test/Calibrated-SIG-SR-metfilter-newGT-2017/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-SIG-SR-metfilter-newGT-2017/ "$1" 0  "}'
+    ls --color=never  /tmp/test2/Calibrated-SIG-SR-metfilter-newGT-2017/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test2/Calibrated-SIG-SR-metfilter-newGT-2017/ "$1" 0  "}'
     
 
     
