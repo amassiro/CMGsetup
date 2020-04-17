@@ -361,6 +361,60 @@ Plot
     
     
     
+Gen weights from Ohio 
+
+    wget https://github.com/OSU-CMS/DisappTrks/raw/master/StandardAnalysis/data/isrWeight_disappTrks_run2.root
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
