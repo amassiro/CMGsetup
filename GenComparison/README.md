@@ -367,8 +367,14 @@ Gen weights from Ohio
     
     
     
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_Ohio.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,1000,\"1\",0,1.0,1.0\) 
 
 
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_nomet.root           \
+           DrawCompareWithWeight.cxx\(\"genMetTrue\",40,0,1000,\"1\",0,1.0,1.0\) 
 
 
 
