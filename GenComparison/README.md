@@ -383,7 +383,17 @@ Gen weights from Ohio
 
 
 
+Origin:
 
+    https://github.com/OSU-CMS/OSUT3Analysis/blob/master/AnaTools/plugins/ISRWeightProducer.cc#L71
+
+    
+The electroweakinos "of interest" would be, in Pythia8, the "isLastCopy && !isFirstCopy" 1000024 and 1000022 GenParticles -- this is because Pythia8 does not boost from ISR the first copies. Also a first copy could be a neutralino from a chargino's decay, and you don't want to add that momentum twice.
+
+With that pair-pt just evaluate both the madgraph/pythia8 and data/MC histograms, and weight your events with the product of those bin values.
+
+2017 conditions: "SingleMu_2017" and "madgraphOverPythia8_94X"
+2018 conditions: "SingleMu_2018" and "madgraphOverPythia8_102X"
 
 
 
