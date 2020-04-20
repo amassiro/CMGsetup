@@ -381,6 +381,25 @@ Gen weights from Ohio
            /tmp/amassiro/private_500GeV_10cm_nomet.root           \
            DrawCompareWithWeight.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
 
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_nomet.root           \
+           DrawCompareWithWeight.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
+           
+           
+
+Produce trees:
+
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
+                              outputFile=/tmp/amassiro/private_500GeV_10cm_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_private_500GeV_10cm_Ohio.py \
+                              outputFile=/tmp/amassiro/private_500GeV_10cm_Ohio.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
 
 
 Origin:
@@ -388,7 +407,7 @@ Origin:
     https://github.com/OSU-CMS/OSUT3Analysis/blob/master/AnaTools/plugins/ISRWeightProducer.cc#L71
 
     
-The electroweakinos "of interest" would be, in Pythia8, the "isLastCopy && !isFirstCopy" 1000024 and 1000022 GenParticles -- this is because Pythia8 does not boost from ISR the first copies. Also a first copy could be a neutralino from a chargino's decay, and you don't want to add that momentum twice.
+The electroweakinos "of interest" would be, in Pythia8, the "isLastCopy && !isFirstCopy" (with "statusFlags().") 1000024 and 1000022 GenParticles -- this is because Pythia8 does not boost from ISR the first copies. Also a first copy could be a neutralino from a chargino's decay, and you don't want to add that momentum twice.
 
 With that pair-pt just evaluate both the madgraph/pythia8 and data/MC histograms, and weight your events with the product of those bin values.
 
