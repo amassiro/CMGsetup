@@ -211,6 +211,10 @@ Plot
            /tmp/amassiro/petrucciani_500GeV_10cm.root           \
            DrawCompare.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0\) 
 
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
+
            
     r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
            /tmp/amassiro/petrucciani_500GeV_10cm.root           \
@@ -384,7 +388,17 @@ Gen weights from Ohio
     r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
            /tmp/amassiro/private_500GeV_10cm_nomet.root           \
            DrawCompareWithWeight.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
-           
+     
+     
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_nomet.root           \
+           DrawCompareWithWeight.cxx\(\"new_diCharginoPT\",100,0,1000,\"1\",0,1.0,1.0\) 
+    
+    
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm_nomet.root           \
+           DrawCompareWithWeight.cxx\(\"new_diCharginoPT\",500,0,500,\"1\",0,1.0,1.0\) 
+    
            
 
 Produce trees:
@@ -411,8 +425,8 @@ The electroweakinos "of interest" would be, in Pythia8, the "isLastCopy && !isFi
 
 With that pair-pt just evaluate both the madgraph/pythia8 and data/MC histograms, and weight your events with the product of those bin values.
 
-2017 conditions: "SingleMu_2017" and "madgraphOverPythia8_94X"
-2018 conditions: "SingleMu_2018" and "madgraphOverPythia8_102X"
+    2017 conditions: "SingleMu_2017" and "madgraphOverPythia8_94X"
+    2018 conditions: "SingleMu_2018" and "madgraphOverPythia8_102X"
 
 
 
