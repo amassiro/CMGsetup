@@ -385,10 +385,6 @@ Gen weights from Ohio
            /tmp/amassiro/private_500GeV_10cm_nomet.root           \
            DrawCompareWithWeight.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
 
-    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
-           /tmp/amassiro/private_500GeV_10cm_nomet.root           \
-           DrawCompareWithWeight.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
-     
      
     r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
            /tmp/amassiro/private_500GeV_10cm_nomet.root           \
@@ -399,8 +395,15 @@ Gen weights from Ohio
            /tmp/amassiro/private_500GeV_10cm_nomet.root           \
            DrawCompareWithWeight.cxx\(\"new_diCharginoPT\",500,0,500,\"1\",0,1.0,1.0\) 
     
-           
+      
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/petrucciani_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",1000,0,1000,\"1\",0,1.0,1.0\) 
 
+    hadd hratio_together.root hratio_cmg.root hratio.root
+    
+    output: /afs/cern.ch/user/a/amassiro/public/xJeremiNiedziela/hratio_together.root
+           
 Produce trees:
 
     cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
