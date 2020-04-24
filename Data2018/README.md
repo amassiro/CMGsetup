@@ -472,8 +472,22 @@ New signal samples
     
 
 
+Samples
+====
 
+CR1L phase space:
 
+    Data:     /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-CR-2018-Hadded
+    MC:       /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-CR-2018-Hadded
+
+    
+    
+Signal Region phase space:
+
+    Data:       /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-DATA-SR-2018-Hadded
+    MC:         /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-MC-SR-2018-Hadded-2
+    MC SIG: /eos/cms/store/group/phys_exotica/xtracks/7Sep2019/Calibrated-SIG-SR-2018-Hadded
+    
 
 
 
