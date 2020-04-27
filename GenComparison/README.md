@@ -403,6 +403,8 @@ Gen weights from Ohio
     hadd hratio_together.root hratio_cmg.root hratio.root
     
     output: /afs/cern.ch/user/a/amassiro/public/xJeremiNiedziela/hratio_together.root
+            /afs/cern.ch/user/a/amassiro/public/xJeremiNiedziela/hratio_together_newName.root
+    
            
 Produce trees:
 
