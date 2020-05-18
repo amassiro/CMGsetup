@@ -359,3 +359,24 @@ New signal samples by Filip with GT 2017
     
     
       
+Chunk ./jobs_desc_Wino_900GeV1cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_900GeV1cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
+Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk21 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk21/treeProducerXtracks/tree.root.url
+Chunk ./amassiro.cc does not contain url file ./amassiro.cc/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_Wino_300GeV30cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_300GeV30cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
+Chunk ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk70 does not contain url file ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk70/treeProducerXtracks/tree.root.url
+Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk13 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk13/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_Wino_900GeV30cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_900GeV30cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
+Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk16 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk16/treeProducerXtracks/tree.root.url
+Chunk ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk67 does not contain url file ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk67/treeProducerXtracks/tree.root.url
+Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk8 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk8/treeProducerXtracks/tree.root.url
+Chunk ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk59 does not contain url file ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk59/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_Wino_300GeV1cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_300GeV1cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
+Chunk ./jobs_desc_Wino_500GeV1cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_500GeV1cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
+Chunk ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk47 does not contain url file ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk47/treeProducerXtracks/tree.root.url
+Chunk ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk33 does not contain url file ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk33/treeProducerXtracks/tree.root.url
+
+
+
+      
+      
+      
