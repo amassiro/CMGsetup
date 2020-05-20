@@ -630,7 +630,7 @@ Extract efficiency for differen masses
 
                              
     cmsRun gendumper_cfg.py   inputFiles=many::samples_Py_300GeV30cm_2017.py  \
-                              outputFile=/tmp/amassiro/private_Py_300GeV1cm_2017.root  \
+                              outputFile=/tmp/amassiro/private_Py_300GeV30cm_2017.root  \
                               isMiniAod=True  \
                               doLHE=False \
                               mcLHERunInfoTag="" 
@@ -656,14 +656,102 @@ Extract efficiency for differen masses
 
 
     
-                             
+    /eos/cms/store/group/phys_susy/xtracks/noFilter
+    
+      chargino500GeV_ctau10cm_GEN-SIM_2.root
+      chargino500GeV_ctau10cm_GEN-SIM_1.root
+      chargino400GeV_ctau1cm_GEN-SIM_1.root
+      chargino700GeV_ctau10cm_GEN-SIM_1.root
+      chargino800GeV_ctau10cm_GEN-SIM_1.root
+      chargino300GeV_ctau10cm_GEN-SIM_1.root
+      chargino700GeV_ctau1cm_GEN-SIM_2.root
+      chargino600GeV_ctau10cm_GEN-SIM_1.root
+      chargino300GeV_ctau1cm_GEN-SIM_1.root
+      chargino300GeV_ctau30cm_GEN-SIM_1.root
+      chargino500GeV_ctau1cm_GEN-SIM_1.root
+      chargino700GeV_ctau30cm_GEN-SIM_1.root
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino500GeV_ctau10cm_GEN-SIM_2.root  \
+                              outputFile=/tmp/amassiro/private_chargino500GeV_ctau10cm_GEN-SIM_2_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino500GeV_ctau10cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino500GeV_ctau10cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino400GeV_ctau1cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino400GeV_ctau1cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino700GeV_ctau10cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino700GeV_ctau10cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino800GeV_ctau10cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino800GeV_ctau10cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino300GeV_ctau10cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino300GeV_ctau10cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino600GeV_ctau10cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino600GeV_ctau10cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino300GeV_ctau1cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino300GeV_ctau1cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino300GeV_ctau30cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino300GeV_ctau30cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino500GeV_ctau1cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino500GeV_ctau1cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=file:/eos/cms/store/group/phys_susy/xtracks/noFilter/chargino700GeV_ctau30cm_GEN-SIM_1.root  \
+                              outputFile=/tmp/amassiro/private_chargino700GeV_ctau30cm_GEN-SIM_1_nomet.root  \
+                              isMiniAod=False  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                           
                           
 Measure gen met cut efficiency
 
     r99t   /tmp/amassiro/private_MG_M_500_cTau_10_nomet.root       \
            /tmp/amassiro/private_Py_500GeV10cm_2017_nomet.root           \
            /tmp/amassiro/private_Py_500GeV1cm_2017.root           \
-           DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0\) 
+           DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0,1.0\) 
           
     
     From the ratio plot: 0.13114376
@@ -673,39 +761,38 @@ Measure gen met cut efficiency
            /tmp/amassiro/private_Py_500GeV1cm_2017.root           \
            DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0,0.13114376\) 
     
+
+
+
+
+
     
     
     
-    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
-           /tmp/amassiro/private_500GeV_10cm.root           \
-           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,0.13157895\) 
-           
-        
-        
-        
-    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
-           /tmp/amassiro/private_500GeV_10cm.root           \
-           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,1.0\) 
+    
+    r99t   /tmp/amassiro/private_MG_M_300_cTau_10_nomet.root       \
+           /tmp/amassiro/private_chargino300GeV_ctau10cm_GEN-SIM_1_nomet.root           \
+           /tmp/amassiro/private_Py_300GeV1cm_2017.root           \
+           DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0,1.0\) 
+          
+    1./11.0845 = 0.090216067
+
+
+    r99t   /tmp/amassiro/private_MG_M_300_cTau_10_nomet.root       \
+           /tmp/amassiro/private_chargino300GeV_ctau10cm_GEN-SIM_1_nomet.root           \
+           /tmp/amassiro/private_Py_300GeV1cm_2017.root           \
+           DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0,0.090216067\) 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    r99t   \
+           /tmp/amassiro/private_Py_300GeV1cm_2017.root           \
+           /tmp/amassiro/private_Py_500GeV1cm_2017.root           \
+           /tmp/amassiro/private_Py_900GeV1cm_2017.root           \
+           /tmp/amassiro/private_Py_300GeV30cm_2017.root           \
+           /tmp/amassiro/private_Py_900GeV30cm_2017.root           \
+           DrawCompareMany.cxx\(\"genMetTrue\",160,0,2000,\"1\",0\) 
 
 
 
