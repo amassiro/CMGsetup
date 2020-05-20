@@ -445,6 +445,233 @@ With that pair-pt just evaluate both the madgraph/pythia8 and data/MC histograms
 
 
 
+Extract efficiency for differen masses
+====
+
+    cd /afs/cern.ch/user/a/amassiro/work/CMG/DisappearingTracks/27Feb2020/CMSSW_10_4_0/src/LatinoTreesGEN/GenDumper/test
+    
+    cmsenv
+    
+    voms-proxy-init --voms cms -rfc
+
+
+#     M=300, 1cm production (with MET filter at 150 GeV):
+#    /eos/cms/store/group/phys_susy/xtracks/300GeV1cm_2017/miniAOD
+#    
+#    M=300, 30cm production (with MET filter at 150 GeV):
+#    /eos/cms/store/group/phys_susy/xtracks/300GeV30cm_2017/miniAOD
+#    
+#    M=900, 1cm production (with MET filter at 150 GeV):
+#    /eos/cms/store/group/phys_susy/xtracks/900GeV1cm_2017/miniAOD
+#    
+#    M=900, 30 cm production (with MET filter at 150 GeV):
+#    /eos/cms/store/group/phys_susy/xtracks/900GeV30cm_2017/miniAOD
+#    
+#    M=500, 1cm production (with MET filter at 150 GeV):
+#    /eos/cms/store/group/phys_susy/xtracks/500GeV1cm_2017/miniAOD
+#    
+#    M=500, 10cm production (with MET filter at 150 GeV)
+#    /eos/cms/store/group/phys_susy/xtracks/500GeV10cm_newGT/miniAOD
+#    
+
+
+ /eos/cms/store/group/phys_susy/xtracks/300GeV1cm_2017/miniAOD
+ /eos/cms/store/group/phys_susy/xtracks/500GeV1cm_2017/miniAOD
+ /eos/cms/store/group/phys_susy/xtracks/900GeV1cm_2017/miniAOD
+ /eos/cms/store/group/phys_susy/xtracks/300GeV30cm_2017/miniAOD
+ /eos/cms/store/group/phys_susy/xtracks/900GeV30cm_2017/miniAOD
+ 
+ 
+ 
+ 
+    ls -alrth /eos/cms/store/group/phys_susy/xtracks/300GeV1cm_2017/miniAOD/c*   | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_300GeV1cm_2017.py
+    ls -alrth /eos/cms/store/group/phys_susy/xtracks/500GeV1cm_2017/miniAOD/c*   | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_500GeV1cm_2017.py
+    ls -alrth /eos/cms/store/group/phys_susy/xtracks/900GeV1cm_2017/miniAOD/c*   | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_900GeV1cm_2017.py
+    ls -alrth /eos/cms/store/group/phys_susy/xtracks/300GeV30cm_2017/miniAOD/c*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_300GeV30cm_2017.py
+    ls -alrth /eos/cms/store/group/phys_susy/xtracks/900GeV30cm_2017/miniAOD/c*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_900GeV30cm_2017.py
+    
+ 
+ 
+
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_300_cTau_3.merged/W*   | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_300_cTau_3.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_300_cTau_10.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_300_cTau_10.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_300_cTau_30.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_300_cTau_30.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_500_cTau_10.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_500_cTau_10.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_500_cTau_20.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_500_cTau_20.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_650_cTau_10.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_650_cTau_10.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_650_cTau_20.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_650_cTau_20.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_800_cTau_20.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_800_cTau_20.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_800_cTau_10.merged/W*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_800_cTau_10.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_1000_cTau_10.merged/W* | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_1000_cTau_10.py
+    ls -alrth /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/Wino_M_1000_cTau_20.merged/W* | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_petrucciani_MG_M_1000_cTau_20.py
+
+    /store/cmst3/user/gpetrucc/SusyWithDeDx/
+    
+    /eos/cms/store/cmst3/user/gpetrucc/SusyWithDeDx/
+    
+    Wino_M_300_cTau_3.merged
+    Wino_M_300_cTau_10.merged
+    Wino_M_300_cTau_30.merged
+    Wino_M_500_cTau_10.merged
+    Wino_M_500_cTau_20.merged
+    Wino_M_650_cTau_10.merged
+    Wino_M_650_cTau_20.merged
+    Wino_M_800_cTau_20.merged
+    Wino_M_800_cTau_10.merged
+    Wino_M_1000_cTau_10.merged
+    Wino_M_1000_cTau_20.merged
+    
+
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
+                              outputFile=/tmp/amassiro/private_500GeV_10cm_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_300_cTau_10.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_300_cTau_10_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_300_cTau_30.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_300_cTau_30_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_500_cTau_10.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_500_cTau_10_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_500_cTau_20.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_500_cTau_20_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_650_cTau_10.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_650_cTau_10_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_650_cTau_20.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_650_cTau_20_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_800_cTau_20.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_800_cTau_20_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_800_cTau_10.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_800_cTau_10_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_1000_cTau_10.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_1000_cTau_10_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_1000_cTau_20.py  \
+                              outputFile=/tmp/amassiro/private_MG_M_1000_cTau_20_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+                             
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_Py_300GeV1cm_2017.py  \
+                              outputFile=/tmp/amassiro/private_Py_300GeV1cm_2017.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                             
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_Py_500GeV1cm_2017.py  \
+                              outputFile=/tmp/amassiro/private_Py_500GeV1cm_2017.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                             
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_Py_900GeV1cm_2017.py  \
+                              outputFile=/tmp/amassiro/private_Py_900GeV1cm_2017.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                             
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_Py_300GeV30cm_2017.py  \
+                              outputFile=/tmp/amassiro/private_Py_300GeV1cm_2017.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                             
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_Py_900GeV30cm_2017.py  \
+                              outputFile=/tmp/amassiro/private_Py_900GeV30cm_2017.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+                              
+                              
+                              
+                              
+                              
+                              
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
+                              outputFile=/tmp/amassiro/private_Py_500GeV10cm_2017_nomet.root  \
+                              isMiniAod=True  \
+                              doLHE=False \
+                              mcLHERunInfoTag="" 
+
+
+    
+                             
+                          
+Measure gen met cut efficiency
+
+
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,1.0\) 
+           
+    From the ratio plot: 0.13157895
+           
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,0.13157895\) 
+           
+        
+        
+        
+    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
+           /tmp/amassiro/private_500GeV_10cm.root           \
+           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,1.0\) 
 
 
 
