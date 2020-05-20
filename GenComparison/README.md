@@ -490,6 +490,9 @@ Extract efficiency for differen masses
     ls -alrth /eos/cms/store/group/phys_susy/xtracks/300GeV30cm_2017/miniAOD/c*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_300GeV30cm_2017.py
     ls -alrth /eos/cms/store/group/phys_susy/xtracks/900GeV30cm_2017/miniAOD/c*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_Py_900GeV30cm_2017.py
     
+    ls -alrth /eos/cms/store/group/phys_susy/xtracks/300GeV1cm/miniAOD-PU/c*  | awk '{print $9}' | sed -e 's/\/eos\/cms//g' > samples_TEST.py
+ 
+ 
  
  
 
@@ -522,12 +525,14 @@ Extract efficiency for differen masses
     Wino_M_1000_cTau_20.merged
     
 
-    cmsRun gendumper_cfg.py   inputFiles=many::samples_500GeV10cm_noFilter.py  \
-                              outputFile=/tmp/amassiro/private_500GeV_10cm_nomet.root  \
+    
+    cmsRun gendumper_cfg.py   inputFiles=many::samples_TEST.py  \
+                              outputFile=/tmp/amassiro/private_samples_TEST.root  \
                               isMiniAod=True  \
                               doLHE=False \
                               mcLHERunInfoTag="" 
 
+    
     cmsRun gendumper_cfg.py   inputFiles=many::samples_petrucciani_MG_M_300_cTau_10.py  \
                               outputFile=/tmp/amassiro/private_MG_M_300_cTau_10_nomet.root  \
                               isMiniAod=True  \
@@ -655,13 +660,22 @@ Extract efficiency for differen masses
                           
 Measure gen met cut efficiency
 
+    r99t   /tmp/amassiro/private_MG_M_500_cTau_10_nomet.root       \
+           /tmp/amassiro/private_Py_500GeV10cm_2017_nomet.root           \
+           /tmp/amassiro/private_Py_500GeV1cm_2017.root           \
+           DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0\) 
+          
+    
+    From the ratio plot: 0.13114376
 
-    r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
-           /tmp/amassiro/private_500GeV_10cm.root           \
-           DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,1.0\) 
-           
-    From the ratio plot: 0.13157895
-           
+    r99t   /tmp/amassiro/private_MG_M_500_cTau_10_nomet.root       \
+           /tmp/amassiro/private_Py_500GeV10cm_2017_nomet.root           \
+           /tmp/amassiro/private_Py_500GeV1cm_2017.root           \
+           DrawCompareMET.cxx\(\"genMetTrue\",160,0,2000,\"1\",0,1.0,1.0,0.13114376\) 
+    
+    
+    
+    
     r99t   /tmp/amassiro/private_500GeV_10cm_nomet.root       \
            /tmp/amassiro/private_500GeV_10cm.root           \
            DrawCompare.cxx\(\"genMetTrue\",40,0,2000,\"1\",0,1.0,0.13157895\) 
