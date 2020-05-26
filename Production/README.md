@@ -330,6 +330,10 @@ New signal samples by Filip with GT 2017
                                                  -r    /store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-metfilter-newGT-2017-18thMay/   --option region=sr --option run=sig   \
                                                  -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
                                                  
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-metfilter-newGT-2017/\
+                                                 -r    /store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-metfilter-newGT-2017-26thMay/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+
                                                  
     mkdir /tmp/test/
     cd /tmp/test/
@@ -360,25 +364,22 @@ New signal samples by Filip with GT 2017
     
     
     
-      
-Chunk ./jobs_desc_Wino_900GeV1cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_900GeV1cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
-Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk21 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk21/treeProducerXtracks/tree.root.url
-Chunk ./amassiro.cc does not contain url file ./amassiro.cc/treeProducerXtracks/tree.root.url
-Chunk ./jobs_desc_Wino_300GeV30cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_300GeV30cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
-Chunk ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk70 does not contain url file ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk70/treeProducerXtracks/tree.root.url
-Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk13 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk13/treeProducerXtracks/tree.root.url
-Chunk ./jobs_desc_Wino_900GeV30cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_900GeV30cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
-Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk16 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk16/treeProducerXtracks/tree.root.url
-Chunk ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk67 does not contain url file ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk67/treeProducerXtracks/tree.root.url
-Chunk ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk8 does not contain url file ./Wino_300GeV1cm_2017_GTv11_METcut_Chunk8/treeProducerXtracks/tree.root.url
-Chunk ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk59 does not contain url file ./Wino_500GeV1cm_2017_GTv11_METcut_Chunk59/treeProducerXtracks/tree.root.url
-Chunk ./jobs_desc_Wino_300GeV1cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_300GeV1cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
-Chunk ./jobs_desc_Wino_500GeV1cm_2017_GTv11_METcut.cfg does not contain url file ./jobs_desc_Wino_500GeV1cm_2017_GTv11_METcut.cfg/treeProducerXtracks/tree.root.url
-Chunk ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk47 does not contain url file ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk47/treeProducerXtracks/tree.root.url
-Chunk ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk33 does not contain url file ./Wino_900GeV30cm_2017_GTv11_METcut_Chunk33/treeProducerXtracks/tree.root.url
+    
+    
+    
+    
+    
+    
+    M=300, 10cm production :
+    /eos/cms/store/group/phys_susy/xtracks/300GeV10cm_2017/miniAOD
+    
+    M=900, 10cm production :
+    /eos/cms/store/group/phys_susy/xtracks/900GeV10cm_2017/miniAOD
+    
+    M=500, 30cm production :
+    /eos/cms/store/group/phys_susy/xtracks/500GeV30cm_2017/miniAOD
+    
+    M=300, 30cm production (with MET filter at 150 GeV):
+    /eos/cms/store/group/phys_susy/xtracks/300GeV30cm_2017/miniAOD
+    
 
-
-
-      
-      
-      
