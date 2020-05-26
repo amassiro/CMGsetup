@@ -364,12 +364,6 @@ New signal samples by Filip with GT 2017
     
     
     
-    
-    
-    
-    
-    
-    
     M=300, 10cm production :
     /eos/cms/store/group/phys_susy/xtracks/300GeV10cm_2017/miniAOD
     
