@@ -902,6 +902,55 @@ New signal samples, with MET cut at gen level and correct GT
     ls Calibrated-SIG-SR-metfilter-newGT-2017/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-metfilter-newGT-2017/"$1"   /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-metfilter-newGT-2017-Hadded/"}'
 
     
+
+    
+    
+16 June 2020
+
+    /eos/cms/store/group/phys_susy/xtracks/300GeV3cm_2017/miniAOD
+    /eos/cms/store/group/phys_susy/xtracks/500GeV3cm_2017/miniAOD
+    /eos/cms/store/group/phys_susy/xtracks/900GeV3cm_2017/miniAOD
+    
+    
+    cd /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/
+    
+    cmsenv
+    
+    voms-proxy-init -voms cms -rfc
+    
+    
+    
+    
+    heppy_batch.py  run_susyDeDx_cfg.py     -o  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/\
+                                                 -r    /store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/   --option region=sr --option run=sig   \
+                                                 -b 'run_condor_simple.sh -t 480 ./batchScript.sh' -B
+                                                 
+                                                 
+    mkdir /tmp/test/
+    cd /tmp/test/
+    
+    cp -r /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/ .
+    cd Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/
+
+    downloadTreesFromEOS.py -t treeProducerXtracks  .   -c    -j 4
+    
+    cd ../
+    
+    haddChunks.py Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/
+
+
+    ls  --color=never   Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/  | awk {'print "if [ ! -f \"Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/"$1"/JSONAnalyzer/JSON.pck\" ]; then  echo \"mv Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/"$1" .\"; fi"'}  | /bin/sh
+
+    
+    cd  /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/macros/xtracks/
+    ls --color=never  /tmp/test/Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/  | grep -v "Chunk" | grep -v "jobs"  | awk '{print "python addSumWgt.py /tmp/test/Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/ "$1" 0  "}'
+    
+
+    
+    mkdir /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-metfilter-newGT-2017-Hadded/
+                                                 
+    ls Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/ | grep -v Chunk | awk '{print "cp -r Calibrated-SIG-SR-metfilter-newGT-2017-16Jun2020/"$1"   /eos/cms/store/group/phys_exotica/xtracks/6Mar2019/Calibrated-SIG-SR-metfilter-newGT-2017-Hadded/"}'
+    
     
 
 Condor problems
