@@ -911,7 +911,10 @@ New signal samples, with MET cut at gen level and correct GT
     /eos/cms/store/group/phys_susy/xtracks/500GeV3cm_2017/miniAOD
     /eos/cms/store/group/phys_susy/xtracks/900GeV3cm_2017/miniAOD
     
-    
+     
+    /eos/cms/store/group/phys_susy/xtracks/600GeV10cm_2017/miniAOD
+    /eos/cms/store/group/phys_susy/xtracks/800GeV30cm_2017/miniAOD
+
     cd /afs/cern.ch/work/a/amassiro/CMG/DisappearingTracks/6Mar2019/CMSSW_9_4_6_patch1/src/CMGTools/TTHAnalysis/cfg/
     
     cmsenv
