@@ -975,5 +975,23 @@ From Jeremi
     /afs/cern.ch/work/j/jniedzie/public/limitsDebugging/
 
     
+    text2workspace.py -P HiggsAnalysis.CombinedLimit.PhysicsModel:multiSignalModel --PO verbose --PO 'map=.*/*Chargino*:to_be_frozen[1,0,10]' --PO 'map=.*/*Chargino_900_30$:r[1,0,10]' datacard_3x3_new_ohio.txt -o datacard.root
+
+    combine -d datacard.root -M Significance --setParameters to_be_frozen=0 --freezeParameters to_be_frozen --redefineSignalPOIs r --setParameterRanges c_1_0=0.001,100:c_0_2=0.001,100:c_1_2=0.001,100:c_1_1=0.001,100      -t -1
+
+    combine -d datacard.root -M Significance --setParameters to_be_frozen=0,r=10 --freezeParameters to_be_frozen --redefineSignalPOIs r \
+                               --setParameterRanges c_1_0=0.001,100:c_0_2=0.001,100:c_1_2=0.001,100:c_1_1=0.001,100      -t -1
+
+                               
+    combine -d datacard.root -M Significance --setParameters to_be_frozen=0,r=1 --freezeParameters to_be_frozen --redefineSignalPOIs r \
+                               --setParameterRanges c_1_0=0.001,100:c_0_2=0.001,100:c_1_2=0.001,100:c_1_1=0.001,100      -t -1
+
+                                
+                               
+    
+    
+    
+    
+    
     
     
